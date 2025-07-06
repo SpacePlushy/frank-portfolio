@@ -93,7 +93,7 @@ export default function ContactSection() {
                 <Button
                   variant="outline"
                   className="w-full justify-start"
-                  onClick={() => window.open("https://linkedin.com/in/frankpalmisano", "_blank")}
+                  onClick={() => window.open("https://www.linkedin.com/in/frank-palmisano", "_blank")}
                 >
                   <ExternalLink className="mr-2 h-4 w-4" />
                   LinkedIn Profile
@@ -101,7 +101,7 @@ export default function ContactSection() {
                 <Button
                   variant="outline"
                   className="w-full justify-start"
-                  onClick={() => window.open("https://github.com/frankpalmisano", "_blank")}
+                  onClick={() => window.open("https://github.com/SpacePlushy", "_blank")}
                 >
                   <ExternalLink className="mr-2 h-4 w-4" />
                   GitHub Profile

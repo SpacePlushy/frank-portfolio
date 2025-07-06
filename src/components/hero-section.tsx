@@ -59,7 +59,7 @@ export default function HeroSection() {
               size="lg"
               variant="outline"
               onClick={() =>
-                window.open("https://linkedin.com/in/frankpalmisano", "_blank")
+                window.open("https://www.linkedin.com/in/frank-palmisano", "_blank")
               }
             >
               <ExternalLink className="mr-2 h-4 w-4" />
