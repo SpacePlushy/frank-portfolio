@@ -42,12 +42,12 @@ export default function HeroSection() {
               <Button
                 size="lg"
                 className="group w-full max-w-sm"
-                onClick={() =>
-                  (window.location.href = "mailto:frank@palmisano.io")
-                }
+                asChild
               >
-                <Mail className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                Email Me
+                <a href="mailto:frank@palmisano.io">
+                  <Mail className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                  Email Me
+                </a>
               </Button>
             </div>
             
@@ -57,21 +57,23 @@ export default function HeroSection() {
                 size="lg"
                 variant="outline"
                 className="flex-1 max-w-[140px]"
-                onClick={() => (window.location.href = "tel:+16233005532")}
+                asChild
               >
-                <Phone className="mr-2 h-4 w-4" />
-                Call Me
+                <a href="tel:+16233005532">
+                  <Phone className="mr-2 h-4 w-4" />
+                  Call Me
+                </a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="flex-1 max-w-[140px]"
-                onClick={() =>
-                  window.open("https://www.linkedin.com/in/frank-palmisano", "_blank")
-                }
+                asChild
               >
-                <ExternalLink className="mr-2 h-4 w-4" />
-                LinkedIn
+                <a href="https://www.linkedin.com/in/frank-palmisano" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  LinkedIn
+                </a>
               </Button>
             </div>
           </div>
