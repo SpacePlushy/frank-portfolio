@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Mail, Phone, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -11,7 +12,19 @@ export default function HeroSection() {
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
-          <div className="space-y-4">
+          <div className="space-y-6">
+            <div className="flex justify-center mb-6">
+              <div className="relative">
+                <Image
+                  src="/headshot.png"
+                  alt="Frank Palmisano - Software Engineer"
+                  width={200}
+                  height={200}
+                  className="rounded-full border-4 border-primary/20 shadow-lg"
+                  priority
+                />
+              </div>
+            </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground">
               Frank Palmisano
             </h1>
