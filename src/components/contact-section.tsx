@@ -93,26 +93,32 @@ export default function ContactSection() {
                 <Button
                   variant="outline"
                   className="w-full justify-start"
-                  onClick={() => window.open("https://www.linkedin.com/in/frank-palmisano", "_blank")}
+                  asChild
                 >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  LinkedIn Profile
+                  <a href="https://www.linkedin.com/in/frank-palmisano" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    LinkedIn Profile
+                  </a>
                 </Button>
                 <Button
                   variant="outline"
                   className="w-full justify-start"
-                  onClick={() => window.open("https://github.com/SpacePlushy", "_blank")}
+                  asChild
                 >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  GitHub Profile
+                  <a href="https://github.com/SpacePlushy" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    GitHub Profile
+                  </a>
                 </Button>
                 <Button
                   variant="outline"
                   className="w-full justify-start"
-                  onClick={() => window.open("https://palmisano.io", "_blank")}
+                  asChild
                 >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Portfolio Website
+                  <a href="https://palmisano.io" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Portfolio Website
+                  </a>
                 </Button>
               </CardContent>
             </Card>
