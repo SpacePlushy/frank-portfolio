@@ -23,6 +23,7 @@ Modern portfolio website for Frank Palmisano, a Software Engineer specializing i
   - Responsive navigation with mobile hamburger menu
   - Dark/light mode toggle
   - Smooth scroll navigation
+  - ### hello 3.
   - Sticky header with blur effect
 
 - ✅ **Hero Section** (`/src/components/hero-section.tsx`)

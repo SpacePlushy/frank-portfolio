@@ -13,9 +13,18 @@ const experiences = [
       "Reduced issue resolution turnaround by 64% (from weeks to days) and achieved cost savings exceeding $2.4 million",
       "Initiated virtualization of ISS Multiplexor/Demultiplexer (MDM) test equipment using Unix and Linux operating systems",
       "Created and optimized automated test software using LabVIEW, C, and Python, reducing product testing time from 8 hours to 3 hours per unit",
-      "Designed and conducted comprehensive training courses on Simics Fundamentals and Model Design, delivering 14 training sessions"
+      "Designed and conducted comprehensive training courses on Simics Fundamentals and Model Design, delivering 14 training sessions",
     ],
-    technologies: ["C/C++", "Python", "Wind River Simics", "LabVIEW", "Unix", "Linux", "Bitbucket", "ClearCase"]
+    technologies: [
+      "C/C++",
+      "Python",
+      "Wind River Simics",
+      "LabVIEW",
+      "Unix",
+      "Linux",
+      "Bitbucket",
+      "ClearCase",
+    ],
   },
   {
     title: "Co-Founder and Chief Technology Officer",
@@ -25,9 +34,9 @@ const experiences = [
     description: [
       "Engineered innovative Bluetooth Low Energy based object recognition software using Objective-C and Swift with iBeacon technology",
       "Achieved substantial improvements in mobile device battery consumption efficiency",
-      "Earned 'Best in Class' award and secured $10,000 development grant from Arizona State University"
+      "Earned 'Best in Class' award and secured $10,000 development grant from Arizona State University",
     ],
-    technologies: ["Objective-C", "Swift", "BLE", "iBeacon", "iOS"]
+    technologies: ["Objective-C", "Swift", "BLE", "iBeacon", "iOS"],
   },
   {
     title: "Software Development Engineer Intern",
@@ -37,9 +46,9 @@ const experiences = [
     description: [
       "Developed automated Python-based scripting solutions for avionics software testing on Northrop Grumman's Blackhawk Helicopter project",
       "Increased test execution speed by 45% and significantly reduced manual coding errors",
-      "Completed project two weeks ahead of original schedule"
+      "Completed project two weeks ahead of original schedule",
     ],
-    technologies: ["Python", "Avionics Testing", "Automation", "Scripting"]
+    technologies: ["Python", "Avionics Testing", "Automation", "Scripting"],
   },
   {
     title: "Customer Service Advisor",
@@ -48,10 +57,10 @@ const experiences = [
     period: "Jun 2014 - Dec 2014",
     description: [
       "Delivered superior technical customer support services with consistently 99% customer satisfaction rating",
-      "Ranked in top 4% nationally and received 16 Outstanding Customer Service Awards"
+      "Ranked in top 4% nationally and received 16 Outstanding Customer Service Awards",
     ],
-    technologies: ["Technical Support", "Customer Service", "Problem Solving"]
-  }
+    technologies: ["Technical Support", "Customer Service", "Problem Solving"],
+  },
 ];
 
 export default function ExperienceSection() {
@@ -67,7 +76,10 @@ export default function ExperienceSection() {
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <Card key={index} className="bg-background shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card
+              key={index}
+              className="bg-background shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div className="space-y-2">

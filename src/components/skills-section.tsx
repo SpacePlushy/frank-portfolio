@@ -14,8 +14,8 @@ const skillCategories = [
       { name: "Assembly", level: "Intermediate" },
       { name: "Bash", level: "Advanced" },
       { name: "JavaScript", level: "Advanced" },
-      { name: "TypeScript", level: "Advanced" }
-    ]
+      { name: "TypeScript", level: "Advanced" },
+    ],
   },
   {
     title: "Technologies & Tools",
@@ -26,8 +26,8 @@ const skillCategories = [
       { name: "Git", level: "Advanced" },
       { name: "React", level: "Advanced" },
       { name: "RTOS", level: "Advanced" },
-      { name: "Unix/Linux", level: "Advanced" }
-    ]
+      { name: "Unix/Linux", level: "Advanced" },
+    ],
   },
   {
     title: "Database & Storage",
@@ -35,8 +35,8 @@ const skillCategories = [
     skills: [
       { name: "Version Control", level: "Advanced" },
       { name: "Bitbucket", level: "Advanced" },
-      { name: "ClearCase", level: "Intermediate" }
-    ]
+      { name: "ClearCase", level: "Intermediate" },
+    ],
   },
   {
     title: "Specializations",
@@ -46,9 +46,9 @@ const skillCategories = [
       { name: "Virtualization", level: "Expert" },
       { name: "Microprocessors", level: "Advanced" },
       { name: "Unit Testing", level: "Advanced" },
-      { name: "Asynchronous Programming", level: "Advanced" }
-    ]
-  }
+      { name: "Asynchronous Programming", level: "Advanced" },
+    ],
+  },
 ];
 
 const getLevelColor = (level: string) => {
@@ -69,15 +69,21 @@ export default function SkillsSection() {
     <section id="skills" className="py-20 bg-muted/20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills & Expertise</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Skills & Expertise
+          </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Comprehensive technical skills spanning embedded systems, web development, and aerospace technology
+            Comprehensive technical skills spanning embedded systems, web
+            development, and aerospace technology
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="bg-background shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card
+              key={index}
+              className="bg-background shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
                   <div className="p-2 bg-primary/20 rounded-lg">
@@ -91,7 +97,9 @@ export default function SkillsSection() {
                   {category.skills.map((skill, i) => (
                     <div key={i} className="flex items-center justify-between">
                       <span className="text-sm font-medium">{skill.name}</span>
-                      <Badge className={`text-xs ${getLevelColor(skill.level)}`}>
+                      <Badge
+                        className={`text-xs ${getLevelColor(skill.level)}`}
+                      >
                         {skill.level}
                       </Badge>
                     </div>

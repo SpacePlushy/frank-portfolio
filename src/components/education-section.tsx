@@ -27,7 +27,10 @@ export default function EducationSection() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <MapPin className="h-4 w-4" />
-                      <span className="font-medium">Arizona State University, Ira A. Fulton Schools of Engineering</span>
+                      <span className="font-medium">
+                        Arizona State University, Ira A. Fulton Schools of
+                        Engineering
+                      </span>
                       <span>•</span>
                       <span>Tempe, AZ</span>
                     </div>
@@ -44,15 +47,33 @@ export default function EducationSection() {
                 <div>
                   <h4 className="font-semibold mb-3">Relevant Coursework</h4>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                    <Badge variant="outline" className="justify-center">Data Structures</Badge>
-                    <Badge variant="outline" className="justify-center">Algorithms</Badge>
-                    <Badge variant="outline" className="justify-center">Software Engineering</Badge>
-                    <Badge variant="outline" className="justify-center">Computer Systems</Badge>
-                    <Badge variant="outline" className="justify-center">Operating Systems</Badge>
-                    <Badge variant="outline" className="justify-center">Database Systems</Badge>
-                    <Badge variant="outline" className="justify-center">Computer Networks</Badge>
-                    <Badge variant="outline" className="justify-center">Embedded Systems</Badge>
-                    <Badge variant="outline" className="justify-center">Real-time Systems</Badge>
+                    <Badge variant="outline" className="justify-center">
+                      Data Structures
+                    </Badge>
+                    <Badge variant="outline" className="justify-center">
+                      Algorithms
+                    </Badge>
+                    <Badge variant="outline" className="justify-center">
+                      Software Engineering
+                    </Badge>
+                    <Badge variant="outline" className="justify-center">
+                      Computer Systems
+                    </Badge>
+                    <Badge variant="outline" className="justify-center">
+                      Operating Systems
+                    </Badge>
+                    <Badge variant="outline" className="justify-center">
+                      Database Systems
+                    </Badge>
+                    <Badge variant="outline" className="justify-center">
+                      Computer Networks
+                    </Badge>
+                    <Badge variant="outline" className="justify-center">
+                      Embedded Systems
+                    </Badge>
+                    <Badge variant="outline" className="justify-center">
+                      Real-time Systems
+                    </Badge>
                   </div>
                 </div>
 
@@ -61,15 +82,21 @@ export default function EducationSection() {
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
                       <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                      <span className="text-muted-foreground">Dean&apos;s List recognition for academic excellence</span>
+                      <span className="text-muted-foreground">
+                        Dean&apos;s List recognition for academic excellence
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                      <span className="text-muted-foreground">Completed senior capstone project in embedded systems</span>
+                      <span className="text-muted-foreground">
+                        Completed senior capstone project in embedded systems
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                      <span className="text-muted-foreground">Active member of IEEE Computer Society</span>
+                      <span className="text-muted-foreground">
+                        Active member of IEEE Computer Society
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -77,9 +104,11 @@ export default function EducationSection() {
                 <div>
                   <h4 className="font-semibold mb-3">Foundation for Career</h4>
                   <p className="text-muted-foreground">
-                    My computer science education at ASU provided a strong foundation in software engineering 
-                    principles, which has been instrumental in my career progression from intern to senior 
-                    software engineer working on mission-critical aerospace systems.
+                    My computer science education at ASU provided a strong
+                    foundation in software engineering principles, which has
+                    been instrumental in my career progression from intern to
+                    senior software engineer working on mission-critical
+                    aerospace systems.
                   </p>
                 </div>
               </div>
