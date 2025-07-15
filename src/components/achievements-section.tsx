@@ -1,38 +1,26 @@
+"use client";
+
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, Rocket, TestTube, DollarSign } from "lucide-react";
+import { Trophy, Rocket, TestTube, DollarSign, Star, Award, TrendingUp } from "lucide-react";
+import { usePortfolioVariant } from "@/contexts/portfolio-variant-context";
+import { portfolioContent } from "@/config/portfolio-content";
 
-const achievements = [
-  {
-    title: "NASA Artemis Project Achievement",
-    icon: <Rocket className="h-6 w-6" />,
-    description:
-      "Spearheaded embedded software development for NASA's Orion spacecraft display unit using Wind River Simics virtualization",
-    impact: "64% Faster Resolution & $2.4M Savings",
-    details: [
-      "Reduced issue resolution time by 64% (from weeks to days)",
-      "Achieved cost savings exceeding $2.4 million for NASA and Honeywell",
-      "Substantially improved software maintainability, reliability, and efficiency",
-    ],
-    badge: "NASA Artemis",
-  },
-  {
-    title: "ISS MDM Testing Innovation",
-    icon: <TestTube className="h-6 w-6" />,
-    description:
-      "Led virtualization of International Space Station Multiplexor/Demultiplexer (MDM) test equipment using Unix and Linux systems",
-    impact: "75% Testing Cycle Reduction",
-    details: [
-      "Created virtualized software driver code and test cases",
-      "Reduced testing cycles by 75% (from days to hours)",
-      "Version controlled with Bitbucket and ClearCase for reliability",
-    ],
-    badge: "ISS Innovation",
-  },
-];
+const getIcon = (achievementTitle: string) => {
+  if (achievementTitle.includes("NASA") || achievementTitle.includes("Artemis")) return <Rocket className="h-6 w-6" />;
+  if (achievementTitle.includes("ISS") || achievementTitle.includes("Testing")) return <TestTube className="h-6 w-6" />;
+  if (achievementTitle.includes("Top") || achievementTitle.includes("Ranking")) return <Trophy className="h-6 w-6" />;
+  if (achievementTitle.includes("Satisfaction") || achievementTitle.includes("CSAT")) return <Star className="h-6 w-6" />;
+  if (achievementTitle.includes("Awards") || achievementTitle.includes("Service")) return <Award className="h-6 w-6" />;
+  if (achievementTitle.includes("Knowledge") || achievementTitle.includes("Process")) return <TrendingUp className="h-6 w-6" />;
+  return <Trophy className="h-6 w-6" />;
+};
 
 export default function AchievementsSection() {
+  const variant = usePortfolioVariant();
+  const achievements = portfolioContent[variant].achievements;
+
   return (
     <section id="achievements" className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,13 +29,15 @@ export default function AchievementsSection() {
             Key Achievements
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Transforming aerospace technology through innovative software
-            solutions
+            {variant === 'main' 
+              ? "Transforming aerospace technology through innovative software solutions"
+              : "Delivering exceptional customer experiences with measurable impact"
+            }
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {achievements.map((achievement, index) => (
+          {achievements.slice(0, 4).map((achievement, index) => (
             <Card
               key={index}
               className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20 hover:border-primary/40 transition-all duration-300"
@@ -55,16 +45,18 @@ export default function AchievementsSection() {
               <CardHeader>
                 <div className="flex items-start gap-4">
                   <div className="p-2 bg-primary/20 rounded-lg">
-                    {achievement.icon}
+                    {getIcon(achievement.title)}
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
                       <CardTitle className="text-lg">
                         {achievement.title}
                       </CardTitle>
-                      <Badge variant="secondary" className="text-xs">
-                        {achievement.badge}
-                      </Badge>
+                      {variant === 'main' && (
+                        <Badge variant="secondary" className="text-xs">
+                          {achievement.title.includes("NASA") ? "NASA Artemis" : "ISS Innovation"}
+                        </Badge>
+                      )}
                     </div>
                     <p className="text-sm text-muted-foreground">
                       {achievement.description}
@@ -74,36 +66,50 @@ export default function AchievementsSection() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <div className="flex items-center gap-2">
-                    <DollarSign className="h-4 w-4 text-primary" />
-                    <span className="font-semibold text-primary">
-                      {achievement.impact}
-                    </span>
-                  </div>
-                  <ul className="space-y-2">
-                    {achievement.details.map((detail, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                        <span className="text-sm text-muted-foreground">
-                          {detail}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  {achievement.impact && (
+                    <div className="flex items-center gap-2">
+                      <DollarSign className="h-4 w-4 text-primary" />
+                      <span className="font-semibold text-primary">
+                        {achievement.impact}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
+        {achievements.length > 4 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+            {achievements.slice(4).map((achievement, index) => (
+              <Card key={index + 4} className="bg-muted/50">
+                <CardContent className="p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="p-1.5 bg-primary/10 rounded">
+                      {getIcon(achievement.title)}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm mb-1">{achievement.title}</h4>
+                      <p className="text-xs text-muted-foreground">{achievement.description}</p>
+                      {achievement.impact && (
+                        <p className="text-xs text-primary mt-1 font-medium">{achievement.impact}</p>
+                      )}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
+
         <Alert className="bg-primary/5 border-primary/20">
           <Trophy className="h-4 w-4 text-primary" />
           <AlertDescription className="text-sm">
-            <strong>Recognition:</strong> These achievements demonstrate
-            expertise in mission-critical software development, cost
-            optimization, and innovation in aerospace technology. The work
-            contributed directly to advancing human space exploration
-            capabilities.
+            <strong>Recognition:</strong> {variant === 'main' 
+              ? "These achievements demonstrate expertise in mission-critical software development, cost optimization, and innovation in aerospace technology. The work contributed directly to advancing human space exploration capabilities."
+              : "These achievements reflect a proven track record of exceptional customer service, operational excellence, and the ability to consistently exceed performance metrics across diverse industries."
+            }
           </AlertDescription>
         </Alert>
       </div>

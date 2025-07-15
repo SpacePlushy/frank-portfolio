@@ -1,55 +1,10 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Wrench, Star, Database } from "lucide-react";
-
-const skillCategories = [
-  {
-    title: "Programming Languages",
-    icon: <Code className="h-5 w-5" />,
-    skills: [
-      { name: "C/C++", level: "Expert" },
-      { name: "Python", level: "Advanced" },
-      { name: "C#", level: "Advanced" },
-      { name: "Java", level: "Advanced" },
-      { name: "Assembly", level: "Intermediate" },
-      { name: "Bash", level: "Advanced" },
-      { name: "JavaScript", level: "Advanced" },
-      { name: "TypeScript", level: "Advanced" },
-    ],
-  },
-  {
-    title: "Technologies & Tools",
-    icon: <Wrench className="h-5 w-5" />,
-    skills: [
-      { name: "Wind River Simics", level: "Expert" },
-      { name: "LabVIEW", level: "Advanced" },
-      { name: "Git", level: "Advanced" },
-      { name: "React", level: "Advanced" },
-      { name: "RTOS", level: "Advanced" },
-      { name: "Unix/Linux", level: "Advanced" },
-    ],
-  },
-  {
-    title: "Database & Storage",
-    icon: <Database className="h-5 w-5" />,
-    skills: [
-      { name: "Version Control", level: "Advanced" },
-      { name: "Bitbucket", level: "Advanced" },
-      { name: "ClearCase", level: "Intermediate" },
-    ],
-  },
-  {
-    title: "Specializations",
-    icon: <Star className="h-5 w-5" />,
-    skills: [
-      { name: "Embedded Programming", level: "Expert" },
-      { name: "Virtualization", level: "Expert" },
-      { name: "Microprocessors", level: "Advanced" },
-      { name: "Unit Testing", level: "Advanced" },
-      { name: "Asynchronous Programming", level: "Advanced" },
-    ],
-  },
-];
+import { Code, Wrench, Star, Database, Phone, Users } from "lucide-react";
+import { usePortfolioVariant } from "@/contexts/portfolio-variant-context";
+import { portfolioContent } from "@/config/portfolio-content";
 
 const getLevelColor = (level: string) => {
   switch (level) {
@@ -64,22 +19,39 @@ const getLevelColor = (level: string) => {
   }
 };
 
+const getIcon = (categoryName: string) => {
+  const iconMap: { [key: string]: React.ReactNode } = {
+    "Programming Languages": <Code className="h-5 w-5" />,
+    "Technologies & Frameworks": <Wrench className="h-5 w-5" />,
+    "Database & Storage": <Database className="h-5 w-5" />,
+    "Specializations": <Star className="h-5 w-5" />,
+    "Customer Service Excellence": <Users className="h-5 w-5" />,
+    "Technical Proficiencies": <Phone className="h-5 w-5" />
+  };
+  return iconMap[categoryName] || <Star className="h-5 w-5" />;
+};
+
 export default function SkillsSection() {
+  const variant = usePortfolioVariant();
+  const content = portfolioContent[variant].skills;
+
   return (
     <section id="skills" className="py-20 bg-muted/20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Skills & Expertise
+            {content.heading}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Comprehensive technical skills spanning embedded systems, web
-            development, and aerospace technology
+            {variant === 'main' 
+              ? "Comprehensive technical skills spanning embedded systems, web development, and aerospace technology"
+              : "Expert-level customer service skills combined with technical proficiency"
+            }
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {skillCategories.map((category, index) => (
+          {content.categories.map((category, index) => (
             <Card
               key={index}
               className="bg-background shadow-lg hover:shadow-xl transition-shadow duration-300"
@@ -87,14 +59,14 @@ export default function SkillsSection() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
                   <div className="p-2 bg-primary/20 rounded-lg">
-                    {category.icon}
+                    {getIcon(category.name)}
                   </div>
-                  {category.title}
+                  {category.name}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 gap-3">
-                  {category.skills.map((skill, i) => (
+                  {category.items.map((skill, i) => (
                     <div key={i} className="flex items-center justify-between">
                       <span className="text-sm font-medium">{skill.name}</span>
                       <Badge

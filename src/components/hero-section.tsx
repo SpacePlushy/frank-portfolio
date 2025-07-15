@@ -3,8 +3,12 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Mail, Phone, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import { usePortfolioVariant } from "@/contexts/portfolio-variant-context";
+import { portfolioContent } from "@/config/portfolio-content";
 
 export default function HeroSection() {
+  const variant = usePortfolioVariant();
+  const content = portfolioContent[variant].hero;
   return (
     <section
       id="home"
@@ -17,7 +21,7 @@ export default function HeroSection() {
               <div className="relative">
                 <Image
                   src="/headshot.png"
-                  alt="Frank Palmisano - Software Engineer"
+                  alt={`${content.name} - ${content.title}`}
                   width={200}
                   height={200}
                   className="rounded-full border-4 border-primary/20 shadow-lg"
@@ -26,13 +30,13 @@ export default function HeroSection() {
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground">
-              Frank Palmisano
+              {content.name}
             </h1>
             <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-muted-foreground">
-              Software Engineer
+              {content.title}
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Embedded Systems • Virtualization • NASA Orion Spacecraft
+              {content.tagline}
             </p>
           </div>
 
@@ -44,7 +48,7 @@ export default function HeroSection() {
                 className="group w-full max-w-sm"
                 asChild
               >
-                <a href="mailto:frank@palmisano.io">
+                <a href={`mailto:${content.email}`}>
                   <Mail className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                   Email Me
                 </a>
@@ -59,7 +63,7 @@ export default function HeroSection() {
                 className="flex-1 max-w-[140px]"
                 asChild
               >
-                <a href="tel:+16233005532">
+                <a href={`tel:${content.phone.replace(/[^0-9+]/g, '')}`}>
                   <Phone className="mr-2 h-4 w-4" />
                   Call Me
                 </a>
@@ -70,7 +74,7 @@ export default function HeroSection() {
                 className="flex-1 max-w-[140px]"
                 asChild
               >
-                <a href="https://www.linkedin.com/in/frank-palmisano" target="_blank" rel="noopener noreferrer">
+                <a href={content.linkedin} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="mr-2 h-4 w-4" />
                   LinkedIn
                 </a>
