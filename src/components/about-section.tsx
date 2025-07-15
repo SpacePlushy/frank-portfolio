@@ -12,10 +12,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{content.heading}</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {content.summary.split('.')[0]}.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold">{content.heading}</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 items-center">
