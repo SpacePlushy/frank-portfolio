@@ -11,11 +11,6 @@ export function middleware(request: NextRequest) {
   // Determine portfolio variant based on subdomain
   let variant = 'general' // Default for palmisano.io and www.palmisano.io
   
-  // TEMPORARY: Force CSR for testing - REMOVE AFTER TESTING
-  if (hostname.includes('vercel.app')) {
-    variant = 'csr'
-  }
-  
   if (subdomain === 'swe') {
     variant = 'swe'
   } else if (subdomain === 'csr') {

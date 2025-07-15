@@ -9,7 +9,6 @@ import SkillsSection from "@/components/skills-section";
 import EducationSection from "@/components/education-section";
 import ContactSection from "@/components/contact-section";
 import PortfolioSelection from "@/components/portfolio-selection";
-import DebugInfo from "@/components/debug-info";
 import { usePortfolioVariant } from "@/contexts/portfolio-variant-context";
 
 export default function Home() {
@@ -37,7 +36,6 @@ export default function Home() {
           <ContactSection />
         </>
       )}
-      <DebugInfo />
     </div>
   );
 }

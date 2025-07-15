@@ -19,69 +19,6 @@ export default function PortfolioSelection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Software Engineering Portfolio */}
-          <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border-blue-200 dark:border-blue-800 hover:shadow-xl transition-all duration-300 group">
-            <CardHeader>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-blue-600 text-white rounded-lg">
-                  <Code className="h-6 w-6" />
-                </div>
-                <div>
-                  <CardTitle className="text-xl text-blue-900 dark:text-blue-100">
-                    Software Engineering
-                  </CardTitle>
-                  <p className="text-blue-700 dark:text-blue-300 text-sm">
-                    Embedded Systems • Aerospace • NASA Projects
-                  </p>
-                </div>
-              </div>
-              
-              <div className="space-y-4">
-                <div className="flex items-center gap-2">
-                  <Rocket className="h-4 w-4 text-blue-600" />
-                  <span className="text-sm font-medium text-blue-800 dark:text-blue-200">
-                    NASA Orion Spacecraft Contributor
-                  </span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary" className="bg-blue-200 text-blue-800">
-                    C/C++
-                  </Badge>
-                  <Badge variant="secondary" className="bg-blue-200 text-blue-800">
-                    Python
-                  </Badge>
-                  <Badge variant="secondary" className="bg-blue-200 text-blue-800">
-                    Embedded Systems
-                  </Badge>
-                  <Badge variant="secondary" className="bg-blue-200 text-blue-800">
-                    Virtualization
-                  </Badge>
-                </div>
-                <div className="grid grid-cols-2 gap-4 pt-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">$2.4M</div>
-                    <div className="text-xs text-blue-600">Cost Savings</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">6+</div>
-                    <div className="text-xs text-blue-600">Years Experience</div>
-                  </div>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <Button 
-                className="w-full bg-blue-600 hover:bg-blue-700 group-hover:translate-x-1 transition-all"
-                asChild
-              >
-                <a href="https://swe.palmisano.io">
-                  View Software Engineering Portfolio
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
           {/* Customer Service Portfolio */}
           <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 border-green-200 dark:border-green-800 hover:shadow-xl transition-all duration-300 group">
             <CardHeader>
@@ -139,6 +76,69 @@ export default function PortfolioSelection() {
               >
                 <a href="https://csr.palmisano.io">
                   View Customer Service Portfolio
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Software Engineering Portfolio */}
+          <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border-blue-200 dark:border-blue-800 hover:shadow-xl transition-all duration-300 group">
+            <CardHeader>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-blue-600 text-white rounded-lg">
+                  <Code className="h-6 w-6" />
+                </div>
+                <div>
+                  <CardTitle className="text-xl text-blue-900 dark:text-blue-100">
+                    Software Engineering
+                  </CardTitle>
+                  <p className="text-blue-700 dark:text-blue-300 text-sm">
+                    Embedded Systems • Aerospace • NASA Projects
+                  </p>
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <Rocket className="h-4 w-4 text-blue-600" />
+                  <span className="text-sm font-medium text-blue-800 dark:text-blue-200">
+                    NASA Orion Spacecraft Contributor
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary" className="bg-blue-200 text-blue-800">
+                    C/C++
+                  </Badge>
+                  <Badge variant="secondary" className="bg-blue-200 text-blue-800">
+                    Python
+                  </Badge>
+                  <Badge variant="secondary" className="bg-blue-200 text-blue-800">
+                    Embedded Systems
+                  </Badge>
+                  <Badge variant="secondary" className="bg-blue-200 text-blue-800">
+                    Virtualization
+                  </Badge>
+                </div>
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600">$2.4M</div>
+                    <div className="text-xs text-blue-600">Cost Savings</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600">6+</div>
+                    <div className="text-xs text-blue-600">Years Experience</div>
+                  </div>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <Button 
+                className="w-full bg-blue-600 hover:bg-blue-700 group-hover:translate-x-1 transition-all"
+                asChild
+              >
+                <a href="https://swe.palmisano.io">
+                  View Software Engineering Portfolio
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>

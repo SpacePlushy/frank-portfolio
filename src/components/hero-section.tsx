@@ -51,20 +51,6 @@ export default function HeroSection() {
                 <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
                   <Button
                     size="lg"
-                    className="group bg-blue-600 hover:bg-blue-700 h-16"
-                    asChild
-                  >
-                    <a href="https://swe.palmisano.io">
-                      <Code className="mr-3 h-5 w-5" />
-                      <div className="text-left">
-                        <div className="font-semibold">Software Engineering</div>
-                        <div className="text-xs opacity-90">NASA • Embedded Systems</div>
-                      </div>
-                    </a>
-                  </Button>
-                  
-                  <Button
-                    size="lg"
                     className="group bg-green-600 hover:bg-green-700 h-16"
                     asChild
                   >
@@ -73,6 +59,20 @@ export default function HeroSection() {
                       <div className="text-left">
                         <div className="font-semibold">Customer Service</div>
                         <div className="text-xs opacity-90">99% CSAT • Top 4%</div>
+                      </div>
+                    </a>
+                  </Button>
+                  
+                  <Button
+                    size="lg"
+                    className="group bg-blue-600 hover:bg-blue-700 h-16"
+                    asChild
+                  >
+                    <a href="https://swe.palmisano.io">
+                      <Code className="mr-3 h-5 w-5" />
+                      <div className="text-left">
+                        <div className="font-semibold">Software Engineering</div>
+                        <div className="text-xs opacity-90">NASA • Embedded Systems</div>
                       </div>
                     </a>
                   </Button>
