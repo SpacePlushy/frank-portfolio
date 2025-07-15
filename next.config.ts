@@ -56,7 +56,12 @@ const nextConfig: NextConfig = {
   },
   // Ensure images work properly
   images: {
-    remotePatterns: [],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*.public.blob.vercel-storage.com',
+      },
+    ],
   },
   // Optimize production builds
   poweredByHeader: false,
