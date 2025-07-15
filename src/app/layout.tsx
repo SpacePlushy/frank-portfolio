@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { PortfolioVariantProvider } from "@/contexts/portfolio-variant-context";
 import { portfolioContent } from "@/config/portfolio-content";
 import { BotIdClient } from 'botid/client';
+import ScrollReset from "@/components/scroll-reset";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -91,6 +92,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <ScrollReset />
             {children}
             <Analytics />
           </ThemeProvider>
