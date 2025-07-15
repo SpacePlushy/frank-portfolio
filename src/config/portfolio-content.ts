@@ -256,7 +256,7 @@ export const portfolioContent: Record<'general' | 'swe' | 'csr', PortfolioConten
     },
     hero: {
       name: "Frank Palmisano",
-      title: "Customer Service Agent",
+      title: "Customer Service Representative",
       tagline: "Customer Success • Technical Support • 99% CSAT",
       email: "frank@palmisano.io",
       phone: "(623) 300-5532",
