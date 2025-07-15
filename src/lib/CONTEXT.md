@@ -146,46 +146,69 @@ interface SkillCategory {
 }
 ```
 
-### Form Utilities
+### Security Utilities (`security.ts`)
 
-#### Validation Helpers
+#### Input Sanitization
+**Purpose**: Protect against XSS attacks and malicious input
+
 ```typescript
-// Email validation utility
-export const isValidEmail = (email: string): boolean => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  return emailRegex.test(email)
+// Sanitize text input by escaping dangerous characters
+export function sanitizeText(input: string): string {
+  return input
+    .trim()
+    .replace(/[<>"'&]/g, (match) => htmlEntities[match])
+    .slice(0, 1000); // Prevent excessively long inputs
 }
 
-// Phone number formatting
-export const formatPhoneNumber = (phone: string): string => {
-  const cleaned = phone.replace(/\D/g, '')
-  const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
-  return match ? `(${match[1]}) ${match[2]}-${match[3]}` : phone
+// Validate and sanitize email addresses
+export function sanitizeEmail(email: string): string {
+  const cleaned = email.trim().toLowerCase();
+  if (!EMAIL_REGEX.test(cleaned)) {
+    throw new Error('Invalid email format');
+  }
+  return cleaned;
 }
 
-// Form validation state
-export const getValidationState = (
-  value: string,
-  required: boolean,
-  validator?: (value: string) => boolean
-) => {
-  if (required && !value) return 'required'
-  if (value && validator && !validator(value)) return 'invalid'
-  return 'valid'
+// Create safe mailto URLs with validated inputs
+export function createSafeMailtoUrl(data: ContactFormData): string {
+  const validated = validateContactForm(data);
+  const body = `Name: ${validated.name}\nEmail: ${validated.email}\n\nMessage:\n${validated.message}`;
+  return `mailto:frank@palmisano.io?subject=${encodeURIComponent(validated.subject)}&body=${encodeURIComponent(body)}`;
 }
 ```
 
-#### React Hook Form Integration
+### Form Validation (`validations.ts`)
+
+#### Zod Schema Validation
+**Purpose**: Type-safe form validation with user-friendly error messages
+
 ```typescript
-// Form field wrapper utility
-export const createFormField = <T extends FieldValues>(
-  name: Path<T>,
-  control: Control<T>,
-  rules?: RegisterOptions<T>
-) => ({
-  ...control.register(name, rules),
-  error: control.formState.errors[name]
-})
+// Contact form validation schema
+export const contactFormSchema = z.object({
+  name: z
+    .string()
+    .min(2, 'Name must be at least 2 characters')
+    .max(50, 'Name must be less than 50 characters')
+    .regex(/^[a-zA-Z\s'-]+$/, 'Name can only contain letters, spaces, hyphens, and apostrophes'),
+  
+  email: z
+    .string()
+    .email('Please enter a valid email address')
+    .max(100, 'Email must be less than 100 characters'),
+  
+  subject: z
+    .string()
+    .min(5, 'Subject must be at least 5 characters')
+    .max(100, 'Subject must be less than 100 characters'),
+  
+  message: z
+    .string()
+    .min(10, 'Message must be at least 10 characters')
+    .max(1000, 'Message must be less than 1000 characters')
+});
+
+// Type-safe form data interface
+export type ContactFormData = z.infer<typeof contactFormSchema>;
 ```
 
 ### Animation Utilities

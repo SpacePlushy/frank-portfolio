@@ -89,12 +89,33 @@ useEffect(() => {
 - **Continuing education**: Professional development and ongoing learning
 
 #### Contact Section (`contact-section.tsx`)
-**Purpose**: Contact information and communication options
+**Purpose**: Contact information and secure communication form
+
+**Security Features:**
+- **Input sanitization**: All user inputs sanitized using security utilities
+- **XSS prevention**: Secure mailto URL generation with proper encoding
+- **Zod validation**: Type-safe schema validation with user-friendly error messages
+- **Loading states**: Visual feedback during form submission
 
 **Interaction Design:**
-- **Contact form**: Client-side validation with Zod and React Hook Form
+- **Contact form**: Real-time validation with error states and loading indicators
 - **Multiple contact methods**: Email, phone, and professional social links
-- **Accessibility**: Proper form labeling and error handling
+- **Accessibility**: Proper form labeling, ARIA attributes, and keyboard navigation
+
+#### Portfolio Selection (`portfolio-selection.tsx`)
+**Purpose**: Landing page component for three-way portfolio variant selection
+
+**Key Features:**
+- **Variant cards**: Visual presentation of SWE and CSR portfolio options
+- **Keyboard navigation**: Full keyboard support with Enter and Space key handling
+- **Focus management**: Visual focus indicators and proper tab order
+- **Responsive design**: Grid layout optimized for mobile and desktop
+
+**Accessibility Implementation:**
+- **ARIA roles and labels**: Semantic list structure with proper labeling
+- **Keyboard interaction**: Tab navigation and keyboard activation
+- **Screen reader support**: Descriptive labels for metrics and actions
+- **Focus indicators**: Clear visual feedback for keyboard users
 
 ### Theme System Components
 
@@ -184,13 +205,43 @@ const [isOpen, setIsOpen] = useState(false);
 - **Lazy loading consideration**: Non-critical components loaded as needed
 - **Bundle optimization**: Tree shaking and code splitting
 
+### Security Implementation Patterns
+
+#### Input Validation Strategy
+```typescript
+// Zod schema validation for type-safe forms
+const contactFormSchema = z.object({
+  name: z.string().min(2).max(50),
+  email: z.string().email(),
+  subject: z.string().min(5).max(100),
+  message: z.string().min(10).max(1000)
+});
+
+// Form submission with validation
+const validatedData = validateContactForm(formData);
+```
+
+#### XSS Prevention
+```typescript
+// Secure input sanitization utilities
+export function sanitizeText(input: string): string {
+  return input
+    .trim()
+    .replace(/[<>"'&]/g, (match) => htmlEntities[match])
+    .slice(0, 1000);
+}
+
+// Safe mailto URL generation
+const mailtoLink = createSafeMailtoUrl(validatedData);
+```
+
 ### Accessibility Implementation
 
 #### Semantic HTML Structure
 ```typescript
 // Proper semantic markup
-<section id="home" className="...">
-  <h1>Frank Palmisano</h1>
+<section id="home" className="..." aria-labelledby="home-heading">
+  <h1 id="home-heading">Frank Palmisano</h1>
   <h2>Software Engineer</h2>
 </section>
 ```
@@ -203,6 +254,7 @@ const [isOpen, setIsOpen] = useState(false);
   size="icon"
   onClick={() => setIsOpen(!isOpen)}
   aria-label="Toggle menu"
+  aria-expanded={isOpen}
 >
 ```
 
@@ -210,6 +262,7 @@ const [isOpen, setIsOpen] = useState(false);
 - **Label association**: Proper form labeling for screen readers
 - **Validation feedback**: Clear error messages and success indicators
 - **Keyboard navigation**: Full keyboard accessibility for form interactions
+- **Loading states**: Visual and screen reader feedback during submission
 
 ### Future Enhancement Opportunities
 

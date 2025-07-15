@@ -12,7 +12,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-muted/20"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-muted/20 pt-24"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">

@@ -66,7 +66,7 @@ export const portfolioContent: Record<'general' | 'swe' | 'csr', PortfolioConten
     hero: {
       name: "Frank Palmisano",
       title: "Professional Portfolio",
-      tagline: "Software Engineering • Customer Service Excellence • Problem Solving",
+      tagline: "Customer Service Excellence • Software Engineering • Problem Solving",
       email: "frank@palmisano.io",
       phone: "(623) 300-5532",
       linkedin: "https://linkedin.com/in/frankpalmisano"

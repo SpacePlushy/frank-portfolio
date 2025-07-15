@@ -18,10 +18,9 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <AboutSection />
       
       {variant === 'general' ? (
-        // General landing page layout
+        // General landing page layout - only hero, portfolio selection, and contact
         <>
           <PortfolioSelection />
           <ContactSection />
@@ -29,6 +28,7 @@ export default function Home() {
       ) : (
         // Full portfolio layout for SWE and CSR variants
         <>
+          <AboutSection />
           <ExperienceSection />
           <AchievementsSection />
           <SkillsSection />

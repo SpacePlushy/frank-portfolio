@@ -8,6 +8,15 @@
 - **Metadata optimization**: Static metadata generation for SEO and social sharing
 - **File-system routing**: Standard Next.js App Router conventions for future expansion
 
+### Middleware & Security Architecture
+
+#### Middleware (`../middleware.ts`)
+- **Subdomain routing**: Secure detection and validation of portfolio variants (general, swe, csr)
+- **Host validation**: Whitelist-based host header validation preventing subdomain spoofing
+- **Security headers**: Comprehensive security headers including CSP, HSTS, X-Frame-Options
+- **Development support**: Local development subdomain simulation via query parameters
+- **Variant propagation**: Sets x-subdomain header for downstream component access
+
 ### Layout Implementation
 
 #### Root Layout (`layout.tsx`)
@@ -16,6 +25,7 @@
 - **Analytics setup**: Vercel Analytics component for performance monitoring
 - **Metadata configuration**: Open Graph, Twitter Cards, and SEO optimization
 - **Viewport configuration**: Responsive viewport settings via `generateViewport()`
+- **Variant detection**: Reads x-subdomain header to determine portfolio variant
 
 #### Global Styling (`globals.css`)
 - **Tailwind CSS 4**: Modern CSS framework with PostCSS integration

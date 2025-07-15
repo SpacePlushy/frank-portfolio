@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { usePortfolioVariant } from "@/contexts/portfolio-variant-context";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -18,6 +19,10 @@ const navItems = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const variant = usePortfolioVariant();
+  
+  // Only show navigation items on actual portfolio pages, not on the general landing page
+  const showNavItems = variant !== 'general';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +52,7 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item) => (
+              {showNavItems && navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -63,24 +68,26 @@ export default function Navbar() {
           {/* Mobile menu button and theme toggle */}
           <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
-            >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </Button>
+            {showNavItems && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label="Toggle menu"
+              >
+                {isOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </Button>
+            )}
           </div>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      {isOpen && (
+      {isOpen && showNavItems && (
         <div className="md:hidden bg-background border-b border-border">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
