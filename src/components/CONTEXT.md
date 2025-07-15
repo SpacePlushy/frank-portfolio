@@ -14,18 +14,32 @@
 **Purpose**: Landing section with professional introduction and primary contact actions
 
 **Key Features:**
-- **Profile image optimization**: Next.js Image component with priority loading
+- **Profile image optimization**: Vercel Blob Storage with automatic optimization via Image component
 - **Contact button hierarchy**: Primary email action with secondary phone/LinkedIn
+- **Variant-specific content**: LinkedIn button hidden for CSR variant
 - **Responsive layout**: Optimized for mobile and desktop viewing
-- **Smooth scrolling**: Animated scroll-down indicator to about section
+- **Mobile-safe positioning**: "Learn more" button positioned above mobile browser UI
+- **Clean URL scrolling**: Button-based navigation without hash fragments
 
 **Implementation Patterns:**
 ```typescript
-// Mobile-optimized button layout
+// Mobile-optimized button layout with variant-specific rendering
 <div className="flex gap-3 justify-center">
   <Button className="flex-1 max-w-[140px]">Phone</Button>
-  <Button className="flex-1 max-w-[140px]">LinkedIn</Button>
+  {variant !== 'csr' && (
+    <Button className="flex-1 max-w-[140px]">LinkedIn</Button>
+  )}
 </div>
+
+// Clean URL scroll implementation
+<button
+  onClick={() => {
+    const element = document.getElementById('about');
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  }}
+>
+  Learn more
+</button>
 ```
 
 #### Navigation Bar (`navbar.tsx`)
@@ -35,6 +49,8 @@
 - **Scroll-based styling**: Background blur and border on scroll
 - **Mobile responsiveness**: Hamburger menu with slide-out navigation
 - **Theme integration**: Theme toggle placement in both desktop and mobile views
+- **Clean URL navigation**: Uses button-based scrolling without hash fragments
+- **Variant awareness**: Navigation items only shown on portfolio pages, hidden on general landing
 - **Accessibility**: ARIA labels and keyboard navigation support
 
 **State Management:**
@@ -46,6 +62,17 @@ useEffect(() => {
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
+```
+
+**Clean URL Implementation:**
+```typescript
+// Navigation uses buttons with smooth scrolling instead of anchor links
+<button
+  onClick={() => scrollToSection(item.section)}
+  className="text-muted-foreground hover:text-primary"
+>
+  {item.name}
+</button>
 ```
 
 #### About Section (`about-section.tsx`)
@@ -100,6 +127,7 @@ useEffect(() => {
 **Interaction Design:**
 - **Contact form**: Real-time validation with error states and loading indicators
 - **Multiple contact methods**: Email, phone, and professional social links
+- **Variant-specific links**: LinkedIn hidden for CSR variant in professional links section
 - **Accessibility**: Proper form labeling, ARIA attributes, and keyboard navigation
 
 #### Portfolio Selection (`portfolio-selection.tsx`)
@@ -135,6 +163,29 @@ useEffect(() => {
 - **Visual feedback**: Icons indicating current theme state
 - **Smooth transitions**: CSS transitions for theme switching
 - **Persistent preferences**: LocalStorage-based theme retention
+
+### URL Management & Navigation Components
+
+#### Scroll Reset (`scroll-reset.tsx`)
+**Purpose**: Maintains clean URLs and controls page scroll behavior
+
+**Key Features:**
+- **Hash removal**: Strips URL fragments on page load/refresh
+- **Scroll to top**: Forces viewport to top position on page refresh
+- **Clean URL maintenance**: Prevents hash changes from updating browser URL
+- **Seamless navigation**: Works with smooth scrolling while keeping URLs clean
+
+**Implementation:**
+```typescript
+// Remove hash and scroll to top on page load
+useEffect(() => {
+  if (window.location.hash) {
+    const newUrl = window.location.pathname + window.location.search;
+    window.history.replaceState(null, '', newUrl);
+  }
+  window.scrollTo(0, 0);
+}, [pathname]);
+```
 
 ### Error Handling & Loading Components
 

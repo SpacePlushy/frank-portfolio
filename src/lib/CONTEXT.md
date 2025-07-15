@@ -231,6 +231,27 @@ export const hoverEffects = {
 ```
 
 #### Scroll Utilities
+
+##### Navigation Scrolling (`scroll-to-section.ts`)
+**Purpose**: Smooth scrolling utility for clean URL navigation
+
+```typescript
+// Smooth scroll to section without changing URL
+export function scrollToSection(sectionId: string) {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+```
+
+**Key Features:**
+- **Clean URLs**: Enables smooth scrolling without hash fragments
+- **Type safety**: TypeScript function with clear parameter types
+- **Error handling**: Gracefully handles missing elements
+- **Integration**: Used throughout navigation components for consistent behavior
+
+##### General Scroll Utilities
 ```typescript
 // Smooth scroll to element
 export const scrollToElement = (elementId: string) => {

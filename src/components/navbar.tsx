@@ -55,7 +55,7 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-center space-x-4">
               {showNavItems && navItems.map((item) => (
                 <button
                   key={item.name}
