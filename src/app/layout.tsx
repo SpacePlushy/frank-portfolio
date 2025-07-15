@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { PortfolioVariantProvider } from "@/contexts/portfolio-variant-context";
 import { portfolioContent } from "@/config/portfolio-content";
+import { BotIdClient } from 'botid/client';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,6 +17,23 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+// Define the paths that need bot protection
+const protectedRoutes = [
+  {
+    path: '/api/contact',
+    method: 'POST',
+  },
+  {
+    path: '/api/newsletter',
+    method: 'POST',
+  },
+  {
+    // Protect any form submission endpoints
+    path: '/api/*/submit',
+    method: 'POST',
+  },
+];
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
@@ -60,6 +78,9 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <BotIdClient protect={protectedRoutes} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

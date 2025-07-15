@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withBotId } from 'botid/next/config';
 
 const nextConfig: NextConfig = {
   // Allow local subdomain testing
@@ -64,4 +65,4 @@ const nextConfig: NextConfig = {
   output: 'standalone',
 };
 
-export default nextConfig;
+export default withBotId(nextConfig);
