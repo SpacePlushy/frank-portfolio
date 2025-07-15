@@ -56,8 +56,95 @@ export interface PortfolioContent {
   }>
 }
 
-export const portfolioContent: Record<'main' | 'csr', PortfolioContent> = {
-  main: {
+export const portfolioContent: Record<'general' | 'swe' | 'csr', PortfolioContent> = {
+  general: {
+    metadata: {
+      title: "Frank Palmisano - Professional Portfolio",
+      description: "Versatile professional with expertise in both software engineering and customer service excellence. Explore my diverse skill set and achievements.",
+      keywords: ["Frank Palmisano", "professional", "software engineer", "customer service", "NASA", "Apple", "Arizona", "portfolio"]
+    },
+    hero: {
+      name: "Frank Palmisano",
+      title: "Professional Portfolio",
+      tagline: "Software Engineering • Customer Service Excellence • Problem Solving",
+      email: "frank@palmisano.io",
+      phone: "(623) 300-5532",
+      linkedin: "https://linkedin.com/in/frankpalmisano"
+    },
+    about: {
+      heading: "About Me",
+      summary: "A versatile professional with a unique blend of technical expertise and customer-focused excellence. With experience spanning from NASA spacecraft development to achieving 99% customer satisfaction ratings, I bring both analytical problem-solving skills and exceptional interpersonal abilities to every challenge.",
+      stats: [
+        { label: "Years Experience", value: "10+" },
+        { label: "NASA Project", value: "Orion Spacecraft" },
+        { label: "Customer Satisfaction", value: "99%" },
+        { label: "Industry Recognition", value: "Top 4%" }
+      ]
+    },
+    experience: [
+      {
+        title: "Software Engineer & Technical Professional",
+        company: "Multiple Organizations",
+        period: "2014 - Present",
+        location: "Phoenix, Arizona",
+        description: [
+          "Developed mission-critical software for NASA's Orion spacecraft program",
+          "Achieved 99% customer satisfaction rating in technical support roles",
+          "Led teams and training initiatives across multiple domains",
+          "Consistently exceeded performance metrics in both technical and service roles"
+        ]
+      }
+    ],
+    skills: {
+      heading: "Core Competencies",
+      categories: [
+        {
+          name: "Technical Skills",
+          items: [
+            { name: "Software Development", level: "Expert" },
+            { name: "Problem Solving", level: "Expert" },
+            { name: "System Architecture", level: "Advanced" },
+            { name: "Technical Communication", level: "Expert" }
+          ]
+        },
+        {
+          name: "Professional Skills",
+          items: [
+            { name: "Customer Relations", level: "Expert" },
+            { name: "Team Leadership", level: "Advanced" },
+            { name: "Project Management", level: "Advanced" },
+            { name: "Training & Mentoring", level: "Advanced" }
+          ]
+        }
+      ]
+    },
+    achievements: [
+      {
+        title: "NASA Orion Spacecraft Contributor",
+        description: "Contributed to mission-critical software for human space exploration",
+        impact: "Advancing human spaceflight capabilities"
+      },
+      {
+        title: "Customer Service Excellence",
+        description: "Achieved 99% satisfaction rating and top 4% national ranking",
+        impact: "Exceptional customer experience delivery"
+      },
+      {
+        title: "Cross-Domain Expertise",
+        description: "Successfully excelled in both technical and service-oriented roles",
+        impact: "Versatile problem-solving across industries"
+      }
+    ],
+    education: [
+      {
+        degree: "B.S. in Computer Science",
+        school: "Arizona State University",
+        period: "2014 - 2018",
+        location: "Tempe, Arizona"
+      }
+    ]
+  },
+  swe: {
     metadata: {
       title: "Frank Palmisano - Software Engineer",
       description: "Software Engineer specializing in embedded systems, virtualization, and aerospace software development. NASA Orion Spacecraft contributor.",

@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
-  const subdomain = headersList.get('x-subdomain') || 'main';
-  const variant = subdomain === 'csr' ? 'csr' : 'main';
+  const subdomain = headersList.get('x-subdomain') || 'general';
+  const variant = (subdomain === 'general' || subdomain === 'swe' || subdomain === 'csr') ? subdomain : 'general';
   const content = portfolioContent[variant];
 
   return {
@@ -55,8 +55,8 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const headersList = await headers();
-  const subdomain = headersList.get('x-subdomain') || 'main';
-  const variant = subdomain === 'csr' ? 'csr' : 'main';
+  const subdomain = headersList.get('x-subdomain') || 'general';
+  const variant = (subdomain === 'general' || subdomain === 'swe' || subdomain === 'csr') ? subdomain : 'general';
 
   return (
     <html lang="en" suppressHydrationWarning>

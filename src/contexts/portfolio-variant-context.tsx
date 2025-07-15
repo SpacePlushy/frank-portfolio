@@ -2,9 +2,9 @@
 
 import { createContext, useContext } from 'react'
 
-export type PortfolioVariant = 'main' | 'csr'
+export type PortfolioVariant = 'general' | 'swe' | 'csr'
 
-const PortfolioVariantContext = createContext<PortfolioVariant>('main')
+const PortfolioVariantContext = createContext<PortfolioVariant>('general')
 
 export function PortfolioVariantProvider({
   children,

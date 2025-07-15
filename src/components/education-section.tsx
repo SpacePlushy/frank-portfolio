@@ -19,9 +19,11 @@ export default function EducationSection() {
             Education {certifications && certifications.length > 0 && "& Certifications"}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {variant === 'main' 
+            {variant === 'swe'
               ? "Academic foundation in computer science and engineering"
-              : "Educational background and professional certifications"
+              : variant === 'csr'
+              ? "Educational background and professional certifications"
+              : "Academic foundation and continuous learning"
             }
           </p>
         </div>
@@ -54,7 +56,7 @@ export default function EducationSection() {
                   </div>
                 </div>
               </CardHeader>
-              {variant === 'main' && (
+              {variant === 'swe' && (
                 <CardContent>
                   <div className="space-y-6">
                     <div>
