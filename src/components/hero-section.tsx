@@ -20,16 +20,13 @@ export default function HeroSection() {
             <div className="flex justify-center mb-6">
               <div className="relative">
                 <Image
-                  src={process.env.NEXT_PUBLIC_HEADSHOT_URL 
-                    ? `/_vercel/image?url=${encodeURIComponent(process.env.NEXT_PUBLIC_HEADSHOT_URL)}&w=400&q=75`
-                    : `/_vercel/image?url=${encodeURIComponent('/headshot.png')}&w=400&q=75`
-                  }
+                  src={process.env.NEXT_PUBLIC_HEADSHOT_URL || '/headshot.png'}
                   alt={`${content.name} - ${content.title}`}
                   width={200}
                   height={200}
                   className="rounded-full border-4 border-primary/20 shadow-lg"
                   priority
-                  unoptimized
+                  sizes="(max-width: 640px) 150px, (max-width: 768px) 175px, 200px"
                 />
               </div>
             </div>
