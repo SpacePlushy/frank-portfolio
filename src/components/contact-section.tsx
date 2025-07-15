@@ -7,24 +7,47 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send, ExternalLink } from "lucide-react";
+import { createSafeMailtoUrl } from "@/lib/security";
+import { validateContactForm, type ContactFormData } from "@/lib/validations";
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send this data to your backend
-    const mailtoLink = `mailto:frank@palmisano.io?subject=${encodeURIComponent(
-      formData.subject
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    window.location.href = mailtoLink;
+    setError(null);
+    setIsSubmitting(true);
+    
+    try {
+      // Validate form data with Zod schema
+      const validatedData = validateContactForm(formData);
+      
+      // Create safe mailto URL with validated data
+      const mailtoLink = createSafeMailtoUrl(validatedData);
+      
+      // Use window.open for better UX
+      window.open(mailtoLink, '_self');
+      
+      // Reset form after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error('Form validation error:', error);
+      setError(error instanceof Error ? error.message : 'Please check your input and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -182,9 +205,14 @@ export default function ContactSection() {
                     placeholder="Tell me about your project or inquiry..."
                   />
                 </div>
-                <Button type="submit" className="w-full">
+                {error && (
+                  <div className="p-3 bg-destructive/15 text-destructive rounded-md text-sm">
+                    {error}
+                  </div>
+                )}
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
                   <Send className="mr-2 h-4 w-4" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </CardContent>
