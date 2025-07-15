@@ -42,7 +42,7 @@ All three versions share the same codebase and design but display different cont
 - Embedded systems and aerospace technology emphasis
 - Complete work history and technical achievements
 
-### Customer Service Portfolio (CSR)
+### Customer Service Representative Portfolio (CSR)
 - Customer service excellence focus
 - 99% satisfaction rates and Apple achievements
 - Service-oriented skills and competencies
@@ -67,7 +67,7 @@ All three versions share the same codebase and design but display different cont
 3. Test the portfolios:
    - General landing page: http://palmisano.local:3000
    - Software Engineering: http://swe.palmisano.local:3000
-   - Customer Service: http://csr.palmisano.local:3000
+   - Customer Service Representative: http://csr.palmisano.local:3000
 
 ### Option 2: Manual Testing with Middleware Override
 
@@ -120,7 +120,7 @@ Value: cname.vercel-dns.com
 - [ ] General landing page loads at palmisano.io
 - [ ] Portfolio selection cards work and link correctly
 - [ ] Software Engineering portfolio loads at swe.palmisano.io
-- [ ] Customer Service portfolio loads at csr.palmisano.io
+- [ ] Customer Service Representative portfolio loads at csr.palmisano.io
 - [ ] All sections display appropriate content for each variant
 - [ ] Navigation works correctly across all variants
 - [ ] Contact buttons have correct links
@@ -132,7 +132,7 @@ Value: cname.vercel-dns.com
 
 The landing page features a portfolio selection component with:
 - Two prominent cards showcasing each specialization
-- Visual distinction with color-coded themes (blue for SWE, green for CSR)
+- Visual distinction with color-coded themes (blue for Software Engineering, green for Customer Service Representative)
 - Key metrics and achievements highlighted
 - Direct links to the specialized portfolios
 - Responsive design that works on all devices
@@ -164,6 +164,6 @@ The landing page features a portfolio selection component with:
 All content is managed in `src/config/portfolio-content.ts` with three variants:
 - `general`: Landing page content
 - `swe`: Software Engineering portfolio content
-- `csr`: Customer Service portfolio content
+- `csr`: Customer Service Representative portfolio content
 
 The structure allows for easy updates and maintenance of all three portfolio variants from a single source.

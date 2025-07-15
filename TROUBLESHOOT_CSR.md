@@ -1,4 +1,4 @@
-# CSR Subdomain 404 Troubleshooting Guide
+# Customer Service Representative (CSR) Subdomain 404 Troubleshooting Guide
 
 ## 🚨 Current Issue
 - `swe.palmisano.io` works ✅
@@ -59,7 +59,7 @@ TTL: Automatic
 Run these commands in terminal:
 
 ```bash
-# Check if CSR resolves
+# Check if CSR subdomain resolves
 nslookup csr.palmisano.io
 
 # Check if SWE resolves (working one)
@@ -115,11 +115,11 @@ ipconfig /flushdns
 ## 🚀 Quick Test
 Try this temporary test to verify the code works:
 
-**Option 1: Force CSR mode locally**
+**Option 1: Force Customer Service Representative mode locally**
 1. Temporarily edit `src/middleware.ts`
 2. Change line 12 to: `let variant = 'csr' // Force CSR for testing`
 3. Run `npm run dev`
-4. Visit `http://localhost:3000` - should show CSR content
+4. Visit `http://localhost:3000` - should show Customer Service Representative content
 
 **Option 2: Test with query parameter**
 Add this to middleware for testing:

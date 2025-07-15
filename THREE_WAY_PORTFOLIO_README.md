@@ -12,7 +12,7 @@ Your portfolio now supports a sophisticated three-way routing system:
   - Full technical portfolio with NASA achievements
   - Embedded systems and aerospace focus
 
-- **Customer Service Portfolio**: `csr.palmisano.io`
+- **Customer Service Representative Portfolio**: `csr.palmisano.io`
   - Customer service excellence showcase
   - 99% CSAT and Apple achievements
 
@@ -36,7 +36,7 @@ Your portfolio now supports a sophisticated three-way routing system:
 
 ### 4. **Portfolio Selection Interface**
 - Beautiful card-based selection on landing page
-- Color-coded themes (blue for SWE, green for CSR)
+- Color-coded themes (blue for Software Engineering, green for Customer Service Representative)
 - Key metrics prominently displayed
 - Direct navigation to specialized portfolios
 
@@ -55,7 +55,7 @@ npm run dev
 Test all three variants:
 - **Landing**: http://palmisano.local:3000
 - **SWE**: http://swe.palmisano.local:3000
-- **CSR**: http://csr.palmisano.local:3000
+- **Customer Service Representative**: http://csr.palmisano.local:3000
 
 ## 📦 Vercel Deployment
 

@@ -1,6 +1,6 @@
-# Customer Service Representative Portfolio Setup
+# Customer Service Representative (CSR) Portfolio Setup
 
-This document explains how the CSR portfolio variant works and how to test/deploy it.
+This document explains how the Customer Service Representative (CSR) portfolio variant works and how to test/deploy it.
 
 ## How It Works
 
@@ -34,7 +34,7 @@ Both portfolios share the same codebase and design but display different content
 
 3. Test the portfolios:
    - Main portfolio: http://palmisano.local:3000
-   - CSR portfolio: http://csr.palmisano.local:3000
+   - Customer Service Representative portfolio: http://csr.palmisano.local:3000
 
 ### Option 2: Manual Testing
 
@@ -106,7 +106,7 @@ export const portfolioContent = {
 ## Testing Checklist
 
 - [ ] Main portfolio loads correctly at palmisano.io
-- [ ] CSR portfolio loads correctly at csr.palmisano.io
+- [ ] Customer Service Representative portfolio loads correctly at csr.palmisano.io
 - [ ] All sections display appropriate content for each variant
 - [ ] Navigation works correctly
 - [ ] Contact buttons have correct links

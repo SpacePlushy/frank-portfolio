@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frank Palmisano's Portfolio
+
+A modern, responsive portfolio website with dynamic content routing based on subdomains. Built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+### Three-Way Portfolio System
+
+This portfolio supports three distinct experiences through subdomain-based routing:
+
+1. **General Landing Page** (`palmisano.io`)
+   - Professional overview with portfolio selection
+   - Interactive cards to choose area of interest
+   - Highlights both technical and service achievements
+
+2. **Software Engineering Portfolio** (`swe.palmisano.io`)
+   - Full technical portfolio
+   - NASA Orion spacecraft and embedded systems focus
+   - Comprehensive work history and technical achievements
+
+3. **Customer Service Representative Portfolio** (`csr.palmisano.io`)
+   - Customer service excellence showcase
+   - 99% customer satisfaction achievements
+   - Apple's top 4% performance metrics
+
+### Technical Features
+
+- **Dynamic Content Switching**: Single codebase serves three portfolio variants
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Dark/Light Theme**: System-aware theme with manual toggle
+- **Performance Optimized**: Next.js 14 with optimized images and fonts
+- **Type-Safe**: Full TypeScript implementation
+- **SEO Optimized**: Dynamic metadata for each portfolio variant
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ and npm
+- Git
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/yourusername/frank-portfolio.git
+
+# Navigate to project directory
+cd frank-portfolio
+
+# Install dependencies
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Local Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+For testing the subdomain routing locally:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Run the setup script to configure local hosts
+./scripts/setup-local-testing.sh
 
-## Learn More
+# Start the development server
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Then visit:
+- General Landing: http://palmisano.local:3000
+- Software Engineering: http://swe.palmisano.local:3000
+- Customer Service Representative: http://csr.palmisano.local:3000
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/                    # Next.js app directory
+├── components/             # React components
+│   ├── sections/          # Portfolio section components
+│   └── ui/                # Reusable UI components
+├── config/                # Configuration files
+│   └── portfolio-content.ts # All portfolio content
+├── contexts/              # React contexts
+├── lib/                   # Utility functions
+└── middleware.ts          # Subdomain routing logic
+```
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Vercel Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push to GitHub (automatic deployment via Vercel)
+2. Configure domains in Vercel Dashboard:
+   - `palmisano.io`
+   - `swe.palmisano.io`
+   - `csr.palmisano.io`
+
+### DNS Configuration
+
+Configure your DNS provider:
+
+```
+A record: @ → 76.76.21.21
+CNAME: swe → cname.vercel-dns.com
+CNAME: csr → cname.vercel-dns.com
+```
+
+## Documentation
+
+- [Three-Way Portfolio Setup](./docs/THREE_WAY_PORTFOLIO_SETUP.md) - Detailed setup guide
+- [Customer Service Representative Portfolio Setup](./docs/CSR_PORTFOLIO_SETUP.md) - CSR-specific documentation
+- [Troubleshooting CSR Subdomain](./TROUBLESHOOT_CSR.md) - Common issues and solutions
+
+## Technology Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI
+- **Icons**: Lucide React
+- **Deployment**: Vercel
+
+## Scripts
+
+```bash
+npm run dev        # Start development server
+npm run build      # Build for production
+npm run start      # Start production server
+npm run lint       # Run ESLint
+npm run type-check # Run TypeScript compiler
+```
+
+## Contributing
+
+This is a personal portfolio project, but suggestions and feedback are welcome!
+
+## License
+
+This project is private and proprietary. All rights reserved.

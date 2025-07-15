@@ -106,7 +106,7 @@ useEffect(() => {
 **Purpose**: Landing page component for three-way portfolio variant selection
 
 **Key Features:**
-- **Variant cards**: Visual presentation of SWE and CSR portfolio options
+- **Variant cards**: Visual presentation of Software Engineering and Customer Service Representative portfolio options
 - **Keyboard navigation**: Full keyboard support with Enter and Space key handling
 - **Focus management**: Visual focus indicators and proper tab order
 - **Responsive design**: Grid layout optimized for mobile and desktop
