@@ -12,11 +12,18 @@ const ALLOWED_HOSTS = new Set([
   '127.0.0.1:3000'
 ])
 
+// Check if the host is a Vercel deployment URL
+function isVercelHost(hostname: string): boolean {
+  return hostname.endsWith('.vercel.app') || 
+         hostname.endsWith('.vercel.sh') || 
+         hostname.endsWith('-spaceplushy.vercel.app')
+}
+
 export function middleware(request: NextRequest) {
   const hostname = request.headers.get('host') || ''
   
   // Security: Validate host header against whitelist
-  if (!ALLOWED_HOSTS.has(hostname) && process.env.NODE_ENV === 'production') {
+  if (!ALLOWED_HOSTS.has(hostname) && !isVercelHost(hostname) && process.env.NODE_ENV === 'production') {
     return new NextResponse('Invalid host', { status: 400 })
   }
   
@@ -27,6 +34,9 @@ export function middleware(request: NextRequest) {
   if (hostname === 'localhost:3000' || hostname === '127.0.0.1:3000') {
     // Development: check for port-based subdomain simulation
     subdomain = new URL(request.url).searchParams.get('variant') || 'csr'
+  } else if (isVercelHost(hostname)) {
+    // For Vercel deployments, default to CSR
+    subdomain = 'csr'
   } else {
     subdomain = parts.length > 2 ? parts[0] : 'palmisano'
   }
