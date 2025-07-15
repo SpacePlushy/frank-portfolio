@@ -8,6 +8,7 @@ import { usePortfolioVariant } from "@/contexts/portfolio-variant-context";
 
 const navItems = [
   { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Achievements", href: "#achievements" },
   { name: "Skills", href: "#skills" },
