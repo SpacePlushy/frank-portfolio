@@ -28,24 +28,12 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="relative overflow-hidden"
     >
-      <div className="relative h-4 w-4">
-        <Sun 
-          className={`absolute inset-0 h-4 w-4 rotate-0 transition-all duration-300 ease-in-out ${
-            theme === "light" 
-              ? "scale-100 opacity-100" 
-              : "rotate-90 scale-0 opacity-0"
-          }`}
-        />
-        <Moon 
-          className={`absolute inset-0 h-4 w-4 rotate-90 transition-all duration-300 ease-in-out ${
-            theme === "light" 
-              ? "scale-0 opacity-0" 
-              : "rotate-0 scale-100 opacity-100"
-          }`}
-        />
-      </div>
+      {theme === "light" ? (
+        <Moon className="h-4 w-4" />
+      ) : (
+        <Sun className="h-4 w-4" />
+      )}
       <span className="sr-only">Toggle theme</span>
     </Button>
   );
