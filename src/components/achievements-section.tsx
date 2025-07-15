@@ -1,6 +1,5 @@
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Card, CardContent, CardHe
-  ader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, Rocket, TestTube, DollarSign } from "lucide-react";
 
