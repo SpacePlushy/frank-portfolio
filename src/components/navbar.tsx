@@ -5,15 +5,16 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { usePortfolioVariant } from "@/contexts/portfolio-variant-context";
+import { scrollToSection } from "@/lib/scroll-to-section";
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Achievements", href: "#achievements" },
-  { name: "Skills", href: "#skills" },
-  { name: "Education", href: "#education" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", section: "home" },
+  { name: "About", section: "about" },
+  { name: "Experience", section: "experience" },
+  { name: "Achievements", section: "achievements" },
+  { name: "Skills", section: "skills" },
+  { name: "Education", section: "education" },
+  { name: "Contact", section: "contact" },
 ];
 
 export default function Navbar() {
@@ -44,22 +45,25 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex-shrink-0">
-            <a href="#home" className="text-2xl font-bold text-primary">
+            <button 
+              onClick={() => scrollToSection('home')}
+              className="text-2xl font-bold text-primary"
+            >
               FP
-            </a>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {showNavItems && navItems.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
+                  onClick={() => scrollToSection(item.section)}
                   className="text-muted-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
               <ThemeToggle />
             </div>
@@ -91,14 +95,16 @@ export default function Navbar() {
         <div className="md:hidden bg-background border-b border-border">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="text-muted-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  scrollToSection(item.section);
+                  setIsOpen(false);
+                }}
+                className="text-muted-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors w-full text-left"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </div>
         </div>

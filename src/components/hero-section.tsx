@@ -168,17 +168,18 @@ export default function HeroSection() {
           </div>
 
           <div className="mt-8 mb-16 md:mb-0">
-            <a
-              href="#about"
+            <button
               className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors group py-2"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+              onClick={() => {
+                const element = document.getElementById('about');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
               }}
             >
               <span className="mr-2">Learn more</span>
               <ChevronDown className="h-4 w-4 group-hover:translate-y-1 transition-transform" />
-            </a>
+            </button>
           </div>
         </div>
       </div>
