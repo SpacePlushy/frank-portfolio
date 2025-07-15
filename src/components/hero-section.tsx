@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Mail, Phone, ExternalLink } from "lucide-react";
+import { ChevronDown, Mail, Phone, ExternalLink, Code, Users } from "lucide-react";
 import Image from "next/image";
 import { usePortfolioVariant } from "@/contexts/portfolio-variant-context";
 import { portfolioContent } from "@/config/portfolio-content";
@@ -40,46 +40,128 @@ export default function HeroSection() {
             </p>
           </div>
 
-          <div className="space-y-4">
-            {/* Primary contact button - full width on mobile */}
-            <div className="flex justify-center">
-              <Button
-                size="lg"
-                className="group w-full max-w-sm"
-                asChild
-              >
-                <a href={`mailto:${content.email}`}>
-                  <Mail className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                  Email Me
-                </a>
-              </Button>
-            </div>
-            
-            {/* Secondary contact buttons - side by side on mobile */}
-            <div className="flex gap-3 justify-center">
-              <Button
-                size="lg"
-                variant="outline"
-                className="flex-1 max-w-[140px]"
-                asChild
-              >
-                <a href={`tel:${content.phone.replace(/[^0-9+]/g, '')}`}>
-                  <Phone className="mr-2 h-4 w-4" />
-                  Call Me
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="flex-1 max-w-[140px]"
-                asChild
-              >
-                <a href={content.linkedin} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  LinkedIn
-                </a>
-              </Button>
-            </div>
+          <div className="space-y-6">
+            {variant === 'general' ? (
+              /* Portfolio selection buttons for general landing page */
+              <>
+                <div className="text-center mb-4">
+                  <p className="text-muted-foreground">Choose the portfolio you&apos;d like to explore:</p>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                  <Button
+                    size="lg"
+                    className="group bg-blue-600 hover:bg-blue-700 h-16"
+                    asChild
+                  >
+                    <a href="https://swe.palmisano.io">
+                      <Code className="mr-3 h-5 w-5" />
+                      <div className="text-left">
+                        <div className="font-semibold">Software Engineering</div>
+                        <div className="text-xs opacity-90">NASA • Embedded Systems</div>
+                      </div>
+                    </a>
+                  </Button>
+                  
+                  <Button
+                    size="lg"
+                    className="group bg-green-600 hover:bg-green-700 h-16"
+                    asChild
+                  >
+                    <a href="https://csr.palmisano.io">
+                      <Users className="mr-3 h-5 w-5" />
+                      <div className="text-left">
+                        <div className="font-semibold">Customer Service</div>
+                        <div className="text-xs opacity-90">99% CSAT • Top 4%</div>
+                      </div>
+                    </a>
+                  </Button>
+                </div>
+
+                {/* Contact buttons below portfolio selection */}
+                <div className="pt-4 space-y-3">
+                  <div className="flex justify-center">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="group w-full max-w-sm"
+                      asChild
+                    >
+                      <a href={`mailto:${content.email}`}>
+                        <Mail className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                        Email Me
+                      </a>
+                    </Button>
+                  </div>
+                  
+                  <div className="flex gap-3 justify-center">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="flex-1 max-w-[140px]"
+                      asChild
+                    >
+                      <a href={`tel:${content.phone.replace(/[^0-9+]/g, '')}`}>
+                        <Phone className="mr-2 h-4 w-4" />
+                        Call Me
+                      </a>
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="flex-1 max-w-[140px]"
+                      asChild
+                    >
+                      <a href={content.linkedin} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        LinkedIn
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </>
+            ) : (
+              /* Original contact buttons for SWE and CSR portfolios */
+              <>
+                <div className="flex justify-center">
+                  <Button
+                    size="lg"
+                    className="group w-full max-w-sm"
+                    asChild
+                  >
+                    <a href={`mailto:${content.email}`}>
+                      <Mail className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                      Email Me
+                    </a>
+                  </Button>
+                </div>
+                
+                <div className="flex gap-3 justify-center">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="flex-1 max-w-[140px]"
+                    asChild
+                  >
+                    <a href={`tel:${content.phone.replace(/[^0-9+]/g, '')}`}>
+                      <Phone className="mr-2 h-4 w-4" />
+                      Call Me
+                    </a>
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="flex-1 max-w-[140px]"
+                    asChild
+                  >
+                    <a href={content.linkedin} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      LinkedIn
+                    </a>
+                  </Button>
+                </div>
+              </>
+            )}
           </div>
 
           <div className="mt-12">
