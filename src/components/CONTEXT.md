@@ -136,6 +136,35 @@ useEffect(() => {
 - **Smooth transitions**: CSS transitions for theme switching
 - **Persistent preferences**: LocalStorage-based theme retention
 
+### Error Handling & Loading Components
+
+#### Loading Spinner (`ui/loading-spinner.tsx`)
+**Purpose**: Reusable loading indicator with configurable sizes
+
+**Features:**
+- **Size variants**: Small, medium, and large spinner options
+- **Customizable message**: Optional loading text display
+- **Accessibility**: ARIA label for screen reader support
+- **Consistent styling**: Uses theme colors for visual coherence
+
+#### Error Boundary (`ui/error-boundary.tsx`)
+**Purpose**: Component-level error handling wrapper
+
+**Implementation:**
+- **React Error Boundary**: Class component for error catching
+- **Graceful degradation**: Shows user-friendly error UI instead of crash
+- **Recovery options**: Reset button to retry component rendering
+- **Development mode**: Detailed error information in development
+
+#### Section Skeleton (`ui/section-skeleton.tsx`)
+**Purpose**: Loading placeholder for content sections
+
+**Features:**
+- **Animated placeholders**: Pulse animation for perceived performance
+- **Configurable layout**: Adjustable item count and title display
+- **Consistent spacing**: Matches actual content layout
+- **Responsive design**: Adapts to different screen sizes
+
 ### Component Composition Patterns
 
 #### Page-Level Composition
@@ -204,6 +233,9 @@ const [isOpen, setIsOpen] = useState(false);
 - **Client components for interactivity**: Navigation, theme toggle, forms
 - **Lazy loading consideration**: Non-critical components loaded as needed
 - **Bundle optimization**: Tree shaking and code splitting
+- **Loading states**: Global loading.tsx and component-level loading indicators
+- **Error boundaries**: app/error.tsx for unhandled errors and component-level boundaries
+- **404 handling**: Custom not-found.tsx page for better user experience
 
 ### Security Implementation Patterns
 
@@ -280,9 +312,9 @@ const mailtoLink = createSafeMailtoUrl(validatedData);
 
 #### Performance Enhancements
 - **Progressive Web App**: Offline functionality and app-like experience
-- **Advanced caching**: Edge caching strategies for optimal performance
-- **Image optimization**: Advanced responsive image techniques
-- **Component optimization**: React optimization techniques and patterns
+- **Service worker caching**: Offline support for static assets
+- **Image optimization**: Advanced responsive image techniques with modern formats
+- **Component optimization**: React Suspense and concurrent features
 
 ---
 

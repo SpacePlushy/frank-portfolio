@@ -48,6 +48,8 @@
 - **Image optimization**: Next.js Image component with automatic optimization
 - **Font optimization**: Google Fonts integration with display=swap strategy
 - **Bundle optimization**: Automatic code splitting and tree shaking
+- **Static asset caching**: Aggressive cache headers for images, fonts, and static resources (1 year)
+- **Production optimizations**: Compression enabled, standalone output, poweredBy header disabled
 
 ### App Router Patterns
 
@@ -62,6 +64,13 @@
 - **Section-based navigation**: Hash-based routing to portfolio sections
 - **Mobile-friendly navigation**: Responsive navigation with mobile menu
 - **Accessibility**: ARIA labels and semantic navigation structure
+
+#### Error Handling & Loading States
+- **Global loading state** (`loading.tsx`): Displays loading spinner during route transitions
+- **Error boundaries** (`error.tsx`): Graceful error handling with user-friendly UI and recovery options
+- **404 page** (`not-found.tsx`): Custom 404 page with navigation options back to portfolio variants
+- **Component-level error handling**: ErrorBoundary wrapper for isolated error handling
+- **Loading indicators**: Reusable LoadingSpinner and SectionSkeleton components
 
 ### Development Patterns
 
