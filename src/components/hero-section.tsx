@@ -149,17 +149,19 @@ export default function HeroSection() {
                       Call Me
                     </a>
                   </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="flex-1 max-w-[140px]"
-                    asChild
-                  >
-                    <a href={content.linkedin} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      LinkedIn
-                    </a>
-                  </Button>
+                  {variant !== 'csr' && (
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="flex-1 max-w-[140px]"
+                      asChild
+                    >
+                      <a href={content.linkedin} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        LinkedIn
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </>
             )}

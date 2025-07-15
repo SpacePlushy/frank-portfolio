@@ -9,8 +9,10 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send, ExternalLink } from "lucide-react";
 import { createSafeMailtoUrl } from "@/lib/security";
 import { validateContactForm, type ContactFormData } from "@/lib/validations";
+import { usePortfolioVariant } from "@/contexts/portfolio-variant-context";
 
 export default function ContactSection() {
+  const variant = usePortfolioVariant();
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -113,16 +115,18 @@ export default function ContactSection() {
                 <CardTitle>Professional Links</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button
-                  variant="outline"
-                  className="w-full justify-start"
-                  asChild
-                >
-                  <a href="https://www.linkedin.com/in/frank-palmisano" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    LinkedIn Profile
-                  </a>
-                </Button>
+                {variant !== 'csr' && (
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start"
+                    asChild
+                  >
+                    <a href="https://www.linkedin.com/in/frank-palmisano" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      LinkedIn Profile
+                    </a>
+                  </Button>
+                )}
                 <Button
                   variant="outline"
                   className="w-full justify-start"
