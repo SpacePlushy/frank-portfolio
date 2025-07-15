@@ -26,17 +26,19 @@ export function middleware(request: NextRequest) {
   
   if (hostname === 'localhost:3000' || hostname === '127.0.0.1:3000') {
     // Development: check for port-based subdomain simulation
-    subdomain = new URL(request.url).searchParams.get('variant') || 'general'
+    subdomain = new URL(request.url).searchParams.get('variant') || 'csr'
   } else {
     subdomain = parts.length > 2 ? parts[0] : 'palmisano'
   }
   
   // Determine portfolio variant with strict validation
-  let variant = 'general'
+  let variant = 'csr' // Default to CSR instead of general
   if (subdomain === 'swe') {
     variant = 'swe'
   } else if (subdomain === 'csr') {
     variant = 'csr'
+  } else if (subdomain === 'www' || subdomain === 'palmisano') {
+    variant = 'csr' // Main domain defaults to CSR
   }
   
   // Create response with security headers
