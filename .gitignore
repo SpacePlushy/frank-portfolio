@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI context documentation (local development only)
+/docs/ai-context/
+CLAUDE.md
+MCP-ASSISTANT-RULES.md
