@@ -2,7 +2,6 @@
 
 import Navbar from "@/components/navbar";
 import HeroSection from "@/components/hero-section";
-import AboutSection from "@/components/about-section";
 import ExperienceSection from "@/components/experience-section";
 import AchievementsSection from "@/components/achievements-section";
 import SkillsSection from "@/components/skills-section";
@@ -28,7 +27,6 @@ export default function Home() {
       ) : (
         // Full portfolio layout for SWE and CSR variants
         <>
-          <AboutSection />
           <ExperienceSection />
           <AchievementsSection />
           <SkillsSection />
