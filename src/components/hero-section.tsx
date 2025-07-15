@@ -12,7 +12,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-muted/20 pt-24"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-muted/20 pt-24 pb-20"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
@@ -167,10 +167,14 @@ export default function HeroSection() {
             )}
           </div>
 
-          <div className="mt-12">
+          <div className="mt-8 mb-16 md:mb-0">
             <a
               href="#about"
-              className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors group"
+              className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors group py-2"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               <span className="mr-2">Learn more</span>
               <ChevronDown className="h-4 w-4 group-hover:translate-y-1 transition-transform" />
