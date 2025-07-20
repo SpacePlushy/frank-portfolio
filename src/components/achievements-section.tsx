@@ -29,9 +29,9 @@ export default function AchievementsSection() {
             Key Achievements
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {variant === 'swe'
+            {variant === 'military'
               ? "Transforming aerospace technology through innovative software solutions"
-              : variant === 'csr'
+              : variant === 'aviation'
               ? "Delivering exceptional customer experiences with measurable impact"
               : "Notable achievements across professional domains"
             }
@@ -54,7 +54,7 @@ export default function AchievementsSection() {
                       <CardTitle className="text-lg">
                         {achievement.title}
                       </CardTitle>
-                      {variant === 'swe' && (
+                      {variant === 'military' && (
                         <Badge variant="secondary" className="text-xs">
                           {achievement.title.includes("NASA") ? "NASA Artemis" : "ISS Innovation"}
                         </Badge>
@@ -108,9 +108,9 @@ export default function AchievementsSection() {
         <Alert className="bg-primary/5 border-primary/20">
           <Trophy className="h-4 w-4 text-primary" />
           <AlertDescription className="text-sm">
-            <strong>Recognition:</strong> {variant === 'swe'
+            <strong>Recognition:</strong> {variant === 'military'
               ? "These achievements demonstrate expertise in mission-critical software development, cost optimization, and innovation in aerospace technology. The work contributed directly to advancing human space exploration capabilities."
-              : variant === 'csr'
+              : variant === 'aviation'
               ? "These achievements reflect a proven track record of exceptional customer service, operational excellence, and the ability to consistently exceed performance metrics across diverse industries."
               : "These achievements demonstrate versatility and excellence across multiple professional domains, showcasing both technical expertise and exceptional interpersonal skills."
             }

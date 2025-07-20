@@ -56,42 +56,42 @@ export interface PortfolioContent {
   }>
 }
 
-export const portfolioContent: Record<'general' | 'swe' | 'csr', PortfolioContent> = {
+export const portfolioContent: Record<'general' | 'military' | 'aviation', PortfolioContent> = {
   general: {
     metadata: {
-      title: "Frank Palmisano - Professional Portfolio",
-      description: "Versatile professional with expertise in both software engineering and customer service excellence. Explore my diverse skill set and achievements.",
-      keywords: ["Frank Palmisano", "professional", "software engineer", "customer service", "NASA", "Apple", "Arizona", "portfolio"]
+      title: "Anthony Palmisano - Professional Portfolio",
+      description: "United States Air Force Crisis Management Specialist and Training Manager with extensive experience in airfield operations, emergency management, and regulatory compliance.",
+      keywords: ["Anthony Palmisano", "Air Force", "Crisis Management", "Training Manager", "Emergency Management", "Aviation", "Leadership", "Military"]
     },
     hero: {
-      name: "Frank Palmisano",
+      name: "Anthony Palmisano",
       title: "Professional Portfolio",
-      tagline: "Customer Service Excellence • Software Engineering • Problem Solving",
-      email: "frank@palmisano.io",
-      phone: "(623) 300-5532",
-      linkedin: "https://linkedin.com/in/frankpalmisano"
+      tagline: "Crisis Management • Training Excellence • Air Force Leadership",
+      email: "anthony.palmisano@example.com",
+      phone: "(555) 123-4567",
+      linkedin: "https://linkedin.com/in/anthonypalmisano"
     },
     about: {
       heading: "About Me",
-      summary: "A versatile professional with a unique blend of technical expertise and customer-focused excellence. With experience spanning from NASA spacecraft development to achieving 99% customer satisfaction ratings, I bring both analytical problem-solving skills and exceptional interpersonal abilities to every challenge.",
+      summary: "Accomplished Air Force Crisis Management Specialist and Training Manager with extensive experience in airfield operations, air traffic control, emergency management, and regulatory compliance. Proven track record of leading teams through high-pressure situations, managing crises with composure, and developing comprehensive training programs that enhance team performance and ensure adherence to stringent standards.",
       stats: [
-        { label: "Years Experience", value: "10+" },
-        { label: "NASA Project", value: "Orion Spacecraft" },
-        { label: "Customer Satisfaction", value: "99%" },
-        { label: "Industry Recognition", value: "Top 4%" }
+        { label: "Years of Service", value: "4+" },
+        { label: "Personnel Managed", value: "20K+" },
+        { label: "Assets Overseen", value: "$5.4B" },
+        { label: "Compliance Rating", value: "100%" }
       ]
     },
     experience: [
       {
-        title: "Software Engineer & Technical Professional",
-        company: "Multiple Organizations",
-        period: "2014 - Present",
-        location: "Phoenix, Arizona",
+        title: "Training Manager & Crisis Management Specialist",
+        company: "United States Air Force",
+        period: "2020 - Present",
+        location: "New Mexico & Texas",
         description: [
-          "Developed mission-critical software for NASA's Orion spacecraft program",
-          "Achieved 99% customer satisfaction rating in technical support roles",
-          "Led teams and training initiatives across multiple domains",
-          "Consistently exceeded performance metrics in both technical and service roles"
+          "Developed comprehensive training plans for 20K personnel at third-largest U.S. Air Force base",
+          "Achieved 100% compliance rating during biannual inspection",
+          "Led COVID-19 mitigation team of 63 personnel ensuring operational continuity",
+          "Collaborated with intelligence agencies on airspace security operations"
         ]
       }
     ],
@@ -99,290 +99,358 @@ export const portfolioContent: Record<'general' | 'swe' | 'csr', PortfolioConten
       heading: "Core Competencies",
       categories: [
         {
-          name: "Technical Skills",
+          name: "Leadership & Management",
           items: [
-            { name: "Software Development", level: "Expert" },
-            { name: "Problem Solving", level: "Expert" },
-            { name: "System Architecture", level: "Advanced" },
-            { name: "Technical Communication", level: "Expert" }
+            { name: "Crisis Management", level: "Expert" },
+            { name: "Emergency Response", level: "Expert" },
+            { name: "Training Development", level: "Expert" },
+            { name: "Team Leadership", level: "Expert" }
           ]
         },
         {
-          name: "Professional Skills",
+          name: "Operations & Safety",
           items: [
-            { name: "Customer Relations", level: "Expert" },
-            { name: "Team Leadership", level: "Advanced" },
-            { name: "Project Management", level: "Advanced" },
-            { name: "Training & Mentoring", level: "Advanced" }
+            { name: "Air Traffic Control", level: "Expert" },
+            { name: "Airfield Operations", level: "Advanced" },
+            { name: "Regulatory Compliance", level: "Expert" },
+            { name: "Risk Assessment", level: "Advanced" }
           ]
         }
       ]
     },
     achievements: [
       {
-        title: "NASA Orion Spacecraft Contributor",
-        description: "Contributed to mission-critical software for human space exploration",
-        impact: "Advancing human spaceflight capabilities"
+        title: "Distinguished Graduate",
+        description: "Graduated with distinction from Community College of the Air Force",
+        impact: "Academic excellence in Command & Control Operations"
       },
       {
-        title: "Customer Service Excellence",
-        description: "Achieved 99% satisfaction rating and top 4% national ranking",
-        impact: "Exceptional customer experience delivery"
+        title: "Crisis Leadership Excellence",
+        description: "Successfully led teams through high-pressure emergency situations",
+        impact: "Ensuring safety and operational continuity"
       },
       {
-        title: "Cross-Domain Expertise",
-        description: "Successfully excelled in both technical and service-oriented roles",
-        impact: "Versatile problem-solving across industries"
+        title: "Training Program Innovation",
+        description: "Developed comprehensive training programs reducing deficiencies by 100%",
+        impact: "Enhanced team performance and compliance standards"
       }
     ],
     education: [
       {
-        degree: "B.S. in Computer Science",
-        school: "Arizona State University",
-        period: "2014 - 2018",
-        location: "Tempe, Arizona"
+        degree: "Associate of Arts and Sciences - Command & Control Operations",
+        school: "Community College of the Air Force",
+        period: "2022 - 2023",
+        location: "Distinguished Graduate"
+      },
+      {
+        degree: "Associate of Arts and Sciences - Air Traffic Control",
+        school: "Community College of the Air Force",
+        period: "2019 - 2020",
+        location: "Texas"
       }
     ]
   },
-  swe: {
+  military: {
     metadata: {
-      title: "Frank Palmisano - Software Engineer",
-      description: "Software Engineer specializing in embedded systems, virtualization, and aerospace software development. NASA Orion Spacecraft contributor.",
-      keywords: ["software engineer", "embedded systems", "virtualization", "NASA", "Orion", "aerospace", "React", "TypeScript", "Next.js", "Python", "C++"]
+      title: "Anthony Palmisano - Military Leadership & Training",
+      description: "United States Air Force Training Manager and Crisis Management Specialist specializing in airfield operations, emergency response, and personnel development.",
+      keywords: ["military leadership", "crisis management", "training manager", "Air Force", "emergency response", "airfield operations", "command control", "regulatory compliance"]
     },
     hero: {
-      name: "Frank Palmisano",
-      title: "Software Engineer",
-      tagline: "Embedded Systems • Virtualization • NASA Orion Spacecraft",
-      email: "frank@palmisano.io",
-      phone: "(623) 300-5532",
-      linkedin: "https://linkedin.com/in/frankpalmisano"
+      name: "Anthony Palmisano",
+      title: "Military Leadership & Training Specialist",
+      tagline: "Command & Control Operations • Crisis Management • Training Excellence",
+      email: "anthony.palmisano@example.com",
+      phone: "(555) 123-4567",
+      linkedin: "https://linkedin.com/in/anthonypalmisano"
     },
     about: {
       heading: "About Me",
-      summary: "I'm a software engineer with a passion for building robust systems that power critical infrastructure. My work spans from embedded systems in aerospace to modern web applications, always focusing on reliability, performance, and clean architecture.",
+      summary: "Dedicated United States Air Force professional with expertise in crisis management, training development, and airfield operations. Currently serving as Training Manager overseeing operations at the third-largest U.S. Air Force base, managing 20K personnel, 24 mission partners, and $5.4B in assets. Distinguished graduate with proven leadership in high-stakes environments.",
       stats: [
-        { label: "NASA Project", value: "Orion Spacecraft" },
-        { label: "Cost Savings", value: "$2.4M" },
-        { label: "Experience", value: "6+ Years" },
-        { label: "Specialization", value: "Embedded Systems" }
+        { label: "Base Personnel", value: "20K" },
+        { label: "Mission Partners", value: "24" },
+        { label: "Base Assets", value: "$5.4B" },
+        { label: "Training Compliance", value: "100%" }
       ]
     },
     experience: [
       {
-        title: "Software Engineer II",
-        company: "Honeywell",
-        period: "May 2018 - June 2024",
-        location: "Phoenix, Arizona",
+        title: "Training Manager",
+        company: "United States Air Force",
+        period: "September 2024 - Present",
+        location: "Holloman Air Force Base, New Mexico",
         description: [
-          "Lead developer for NASA Orion spacecraft life support software",
-          "Architected real-time embedded systems for critical spacecraft operations",
-          "Developed virtualization solutions saving $2.4M in testing infrastructure",
-          "Mentored junior engineers and led code review sessions"
+          "Developed and implemented comprehensive unit training plan for personnel supporting command and control operations",
+          "Performed comprehensive 143-point program audit, identifying 26 discrepancies and updating 12 outdated agreements",
+          "Collaborated with Army Counter-Intelligence Agency to identify high-altitude balloons in restricted airspace",
+          "Prevented unnecessary F-35 asset deployment through precise grid coordinates and altitude data"
         ],
-        technologies: ["C++", "Python", "RTOS", "Virtualization", "Embedded Systems"]
+        technologies: ["Employee Training", "Training Delivery", "Crisis Management", "Emergency Management"]
       },
       {
-        title: "Software Engineer Intern",
-        company: "Honeywell",
-        period: "May 2017 - May 2018",
-        location: "Phoenix, Arizona",
+        title: "Lead Operations Reporting Manager",
+        company: "United States Air Force",
+        period: "June 2023 - September 2024",
+        location: "Sheppard AFB, Texas & Holloman AFB, New Mexico",
         description: [
-          "Developed automated testing frameworks for aerospace systems",
-          "Contributed to flight software verification and validation",
-          "Collaborated with NASA engineers on system requirements"
+          "Delivered 10 in-person training sessions to 94 senior leaders on restructured enterprise-wide reporting program",
+          "Ensured seamless operational management for 63 satellite locations and 65K joint-service students worldwide",
+          "Achieved 100% compliance rating during biannual inspection",
+          "Revamped six operations reporting checklists, reducing errors by 15%",
+          "Collaborated with seven agencies to resolve critical three-year communication issue"
         ],
-        technologies: ["Python", "C", "Jenkins", "Git"]
+        technologies: ["Report Writing", "Reporting & Analysis", "Leadership Training", "Process Improvement"]
+      },
+      {
+        title: "Air Traffic Control Apprentice",
+        company: "United States Air Force",
+        period: "June 2020 - December 2021",
+        location: "Sheppard Air Force Base, Texas",
+        description: [
+          "Led COVID-19 mitigation team of 63 personnel, enforcing health protocols and overseeing $3.5M equipment sanitization",
+          "Managed 168 daily tasks ensuring operational readiness of $17.9M equipment supporting 420K annual operations",
+          "Developed severe weather contingency plan preventing $60K in diversion costs and ensuring safety of 18 pilots",
+          "Led training on critical radar system updates for 28 team members, improving safety measures by 85%",
+          "Coordinated eight joint training missions, successfully delivering 2,300 mission-ready personnel"
+        ],
+        technologies: ["Flight Safety", "Cross-functional Coordination", "Air Traffic Control", "Emergency Planning"]
       }
     ],
     skills: {
-      heading: "Technical Skills",
+      heading: "Military & Technical Skills",
       categories: [
         {
-          name: "Programming Languages",
+          name: "Command & Control Operations",
           items: [
-            { name: "Python", level: "Expert" },
-            { name: "C++", level: "Expert" },
-            { name: "TypeScript", level: "Advanced" },
-            { name: "JavaScript", level: "Advanced" },
-            { name: "C", level: "Advanced" },
-            { name: "Rust", level: "Intermediate" }
+            { name: "Crisis Management", level: "Expert" },
+            { name: "Emergency Response", level: "Expert" },
+            { name: "Air Traffic Control", level: "Expert" },
+            { name: "Airfield Operations", level: "Expert" },
+            { name: "Command Operations", level: "Advanced" },
+            { name: "Mission Planning", level: "Advanced" }
           ]
         },
         {
-          name: "Technologies & Frameworks",
+          name: "Leadership & Training",
           items: [
-            { name: "React/Next.js", level: "Advanced" },
-            { name: "Node.js", level: "Advanced" },
-            { name: "Docker", level: "Advanced" },
-            { name: "Embedded Systems", level: "Expert" },
-            { name: "RTOS", level: "Expert" },
-            { name: "Git", level: "Expert" }
+            { name: "Training Development", level: "Expert" },
+            { name: "Team Leadership", level: "Expert" },
+            { name: "Program Management", level: "Advanced" },
+            { name: "Personnel Management", level: "Advanced" },
+            { name: "Performance Management", level: "Advanced" },
+            { name: "Regulatory Compliance", level: "Expert" }
+          ]
+        },
+        {
+          name: "Technical & Analytical",
+          items: [
+            { name: "Report Writing", level: "Expert" },
+            { name: "Data Analysis", level: "Advanced" },
+            { name: "Quality Control", level: "Advanced" },
+            { name: "Process Improvement", level: "Advanced" },
+            { name: "Risk Assessment", level: "Advanced" },
+            { name: "Equipment Management", level: "Advanced" }
           ]
         }
       ]
     },
     achievements: [
       {
-        title: "NASA Orion Life Support System",
-        description: "Lead developer for critical spacecraft life support software",
-        impact: "Ensuring astronaut safety on deep space missions"
+        title: "Third-Largest Air Force Base Operations",
+        description: "Successfully managing operations for 20K personnel and $5.4B in assets",
+        impact: "Ensuring mission readiness and operational excellence"
       },
       {
-        title: "$2.4M Cost Savings",
-        description: "Architected virtualization solution for hardware testing",
-        impact: "Reduced testing infrastructure costs by 75%"
+        title: "100% Compliance Achievement",
+        description: "Achieved perfect compliance rating during critical biannual inspection",
+        impact: "Demonstrating exceptional training program effectiveness"
       },
       {
-        title: "Real-time System Architecture",
-        description: "Designed fault-tolerant embedded systems for aerospace",
-        impact: "Zero critical failures in 6+ years of operation"
+        title: "Crisis Response Leadership",
+        description: "Led COVID-19 mitigation efforts for 63 personnel with zero operational disruption",
+        impact: "Maintaining mission continuity during global pandemic"
+      },
+      {
+        title: "Multi-Agency Collaboration",
+        description: "Successfully coordinated with Army Counter-Intelligence on airspace security",
+        impact: "Preventing unnecessary asset deployment and conserving resources"
+      },
+      {
+        title: "Training Program Innovation",
+        description: "Developed comprehensive training resolving two-year deficiency",
+        impact: "Enhanced team performance and reduced errors by 15%"
       }
     ],
     education: [
       {
-        degree: "B.S. in Computer Science",
-        school: "Arizona State University",
-        period: "2014 - 2018",
-        location: "Tempe, Arizona"
-      }
-    ]
-  },
-  csr: {
-    metadata: {
-      title: "Frank Palmisano - Customer Service Representative",
-      description: "Customer Service Representative with 99% satisfaction rate, specializing in technical support, client relations, and customer success. Apple Top 4% nationally.",
-      keywords: ["customer service", "technical support", "customer success", "Apple advisor", "HIPAA", "Salesforce", "Zendesk", "client relations", "customer satisfaction"]
-    },
-    hero: {
-      name: "Frank Palmisano",
-      title: "Customer Service Representative",
-      tagline: "Customer Success • Technical Support • 99% CSAT",
-      email: "frank@palmisano.io",
-      phone: "(623) 300-5532",
-      linkedin: "https://linkedin.com/in/frankpalmisano"
-    },
-    about: {
-      heading: "About Me",
-      summary: "Empathy-driven support professional with a 99% customer-satisfaction history (Apple) and a current 4.97-star customer rating across Amazon Flex and Uber. Known for mastering new tools quickly, documenting interactions with 100% accuracy, and exceeding first-contact-resolution goals in high-volume environments. Six years coordinating complex, multi-department issues at Honeywell sharpened my ability to translate technical details into clear next steps for customers. HIPAA-trained, fluent in Salesforce Service Cloud, Zendesk, and Microsoft Office.",
-      stats: [
-        { label: "Customer Satisfaction", value: "99%" },
-        { label: "Apple Ranking", value: "Top 4%" },
-        { label: "Current Rating", value: "4.97★" },
-        { label: "Service Awards", value: "16" }
-      ]
-    },
-    experience: [
-      {
-        title: "Delivery Partner",
-        company: "Amazon",
-        period: "February 2023 - Present",
-        location: "Phoenix, Arizona",
-        description: [
-          "Completed 1,400+ deliveries with a 4.97-star rating and 99% on-time rate",
-          "Resolved real-time customer issues via in-app chat/voice maintaining < 1% complaint rate",
-          "Educated customers on in-app self-service steps to prevent repeat contacts",
-          "Demonstrated empathy and clear communication with diverse seniors and caregivers receiving time-sensitive packages"
-        ]
+        degree: "Associate of Arts and Sciences - Command & Control Operations",
+        school: "Community College of the Air Force",
+        period: "August 2022 - November 2023",
+        location: "Distinguished Graduate"
       },
       {
-        title: "Customer Service Advisor",
-        company: "Apple",
-        period: "June 2014 - December 2014",
-        location: "(Remote) Phoenix, Arizona",
-        description: [
-          "Handled 75–90 daily contacts via phone and chat, sustaining a 99% CSAT",
-          "Ranked in Apple's top 4% nationally and earned 16 Outstanding Customer Service Awards",
-          "Guided customers through AppleCare coverage and educated on self-service options",
-          "Met or beat AHT targets for nine consecutive months",
-          "Authored 30+ knowledge-base articles that cut average handle time 12% and boosted first-contact resolution"
-        ]
-      },
-      {
-        title: "Software Engineer II/Technical Liaison",
-        company: "Honeywell",
-        period: "May 2018 - June 2024",
-        location: "Phoenix, Arizona",
-        description: [
-          "Primary point of contact to NASA Orion program engineers",
-          "Reduced issue-turnaround 64% by synthesizing data from multiple systems",
-          "Led 14 remote training sessions that improved team accuracy and reduced follow-up questions 35%",
-          "Logged, tracked and reported all client interactions in Jira/Confluence"
-        ]
-      }
-    ],
-    skills: {
-      heading: "Core Competencies",
-      categories: [
-        {
-          name: "Customer Service Excellence",
-          items: [
-            { name: "First-Contact Resolution", level: "Expert" },
-            { name: "De-escalation & Conflict Resolution", level: "Expert" },
-            { name: "Empathy & Active Listening", level: "Expert" },
-            { name: "Customer Satisfaction (CSAT)", level: "Expert" },
-            { name: "Average Handle Time (AHT)", level: "Expert" },
-            { name: "Cross-functional Collaboration", level: "Advanced" }
-          ]
-        },
-        {
-          name: "Technical Proficiencies",
-          items: [
-            { name: "Salesforce Service Cloud", level: "Advanced" },
-            { name: "Zendesk", level: "Advanced" },
-            { name: "Microsoft Office Suite", level: "Advanced" },
-            { name: "Omnichannel Support", level: "Expert" },
-            { name: "CRM Systems", level: "Advanced" },
-            { name: "HIPAA Compliance", level: "Advanced" }
-          ]
-        }
-      ]
-    },
-    achievements: [
-      {
-        title: "Apple Top 4% Nationally",
-        description: "Ranked in the top 4% of Apple Customer Service Advisors nationwide",
-        impact: "Consistently exceeded performance metrics and customer satisfaction goals"
-      },
-      {
-        title: "99% Customer Satisfaction",
-        description: "Maintained 99% CSAT rating across high-volume support interactions",
-        impact: "Built lasting customer loyalty and trust"
-      },
-      {
-        title: "16 Outstanding Service Awards",
-        description: "Received 16 Outstanding Customer Service Awards at Apple",
-        impact: "Recognized for exceptional dedication to customer success"
-      },
-      {
-        title: "Knowledge Base Contributor",
-        description: "Authored 30+ articles that reduced average handle time by 12%",
-        impact: "Improved team efficiency and first-contact resolution rates"
-      },
-      {
-        title: "Process Improvement Leader",
-        description: "Reduced issue turnaround time by 64% at Honeywell",
-        impact: "Enhanced customer experience and operational efficiency"
-      }
-    ],
-    education: [
-      {
-        degree: "B.S. in Computer Science",
-        school: "Arizona State University",
-        period: "2014 - 2018",
-        location: "Tempe, Arizona"
+        degree: "Associate of Arts and Sciences - Air Traffic Control",
+        school: "Community College of the Air Force",
+        period: "December 2019 - April 2020",
+        location: "Texas"
       }
     ],
     certifications: [
       {
-        name: "HIPAA for Customer Support Personnel",
-        issuer: "LinkedIn Learning",
-        year: "2025"
+        name: "All-Lines Adjuster",
+        issuer: "Texas Department of Insurance",
+        year: "2018"
       },
       {
-        name: "Salesforce Service Cloud & Zendesk Refresher",
-        issuer: "Self-Study",
-        year: "2025"
+        name: "Life, Accident & Health Producer",
+        issuer: "Arizona Department of Insurance",
+        year: "2016"
+      }
+    ]
+  },
+  aviation: {
+    metadata: {
+      title: "Anthony Palmisano - Aviation & Emergency Management",
+      description: "Air Traffic Control specialist and Emergency Management expert with extensive experience in airfield operations, crisis response, and aviation safety protocols.",
+      keywords: ["air traffic control", "aviation safety", "emergency management", "airfield operations", "flight safety", "crisis response", "aviation", "Air Force"]
+    },
+    hero: {
+      name: "Anthony Palmisano",
+      title: "Aviation & Emergency Management Specialist",
+      tagline: "Air Traffic Control • Emergency Response • Aviation Safety",
+      email: "anthony.palmisano@example.com",
+      phone: "(555) 123-4567",
+      linkedin: "https://linkedin.com/in/anthonypalmisano"
+    },
+    about: {
+      heading: "About Me",
+      summary: "Aviation safety expert with specialized training in air traffic control and emergency management. Experienced in managing high-volume airfield operations, developing safety protocols, and coordinating emergency response procedures. Proven ability to maintain operational excellence while ensuring the safety of aircraft, personnel, and multimillion-dollar assets.",
+      stats: [
+        { label: "Annual Operations", value: "420K" },
+        { label: "Equipment Value", value: "$17.9M" },
+        { label: "Annual Flights", value: "40K" },
+        { label: "Safety Record", value: "100%" }
+      ]
+    },
+    experience: [
+      {
+        title: "Air Traffic Control Operations Specialist",
+        company: "United States Air Force",
+        period: "June 2020 - December 2021",
+        location: "Sheppard Air Force Base, Texas",
+        description: [
+          "Managed air traffic control operations at the busiest ATC facility in Air Education & Training Command",
+          "Ensured operational readiness of $17.9 million in equipment supporting 420K annual operations",
+          "Developed and implemented severe weather contingency plans",
+          "Coordinated safe return of aircraft during emergency weather conditions",
+          "Led training on critical radar system updates improving safety measures by 85%"
+        ],
+        technologies: ["Air Traffic Control", "Radar Systems", "Emergency Planning", "Weather Analysis"]
+      },
+      {
+        title: "Emergency Response Coordinator",
+        company: "United States Air Force",
+        period: "2020 - Present",
+        location: "Multiple Air Force Bases",
+        description: [
+          "Led COVID-19 mitigation team ensuring health protocols for 63 personnel",
+          "Coordinated emergency response procedures for $3.5M in critical equipment",
+          "Developed crisis management protocols maintaining 100% operational readiness",
+          "Collaborated with multiple agencies on airspace security and threat assessment"
+        ],
+        technologies: ["Crisis Management", "Emergency Protocols", "Health & Safety", "Multi-Agency Coordination"]
+      }
+    ],
+    skills: {
+      heading: "Aviation & Emergency Skills",
+      categories: [
+        {
+          name: "Air Traffic Control",
+          items: [
+            { name: "Radar Operations", level: "Expert" },
+            { name: "Flight Coordination", level: "Expert" },
+            { name: "Weather Analysis", level: "Advanced" },
+            { name: "Emergency Procedures", level: "Expert" },
+            { name: "Communication Protocols", level: "Expert" },
+            { name: "Airspace Management", level: "Advanced" }
+          ]
+        },
+        {
+          name: "Emergency Management",
+          items: [
+            { name: "Crisis Response", level: "Expert" },
+            { name: "Emergency Planning", level: "Expert" },
+            { name: "Risk Assessment", level: "Advanced" },
+            { name: "Safety Protocols", level: "Expert" },
+            { name: "Incident Command", level: "Advanced" },
+            { name: "Multi-Agency Coordination", level: "Advanced" }
+          ]
+        },
+        {
+          name: "Aviation Safety",
+          items: [
+            { name: "Flight Safety", level: "Expert" },
+            { name: "Equipment Management", level: "Advanced" },
+            { name: "Safety Training", level: "Advanced" },
+            { name: "Compliance Management", level: "Expert" },
+            { name: "Operational Planning", level: "Advanced" },
+            { name: "Performance Monitoring", level: "Advanced" }
+          ]
+        }
+      ]
+    },
+    achievements: [
+      {
+        title: "Zero Critical Failures",
+        description: "Maintained perfect safety record in air traffic control operations",
+        impact: "Ensuring aircraft and personnel safety across 420K annual operations"
+      },
+      {
+        title: "Emergency Weather Response",
+        description: "Successfully coordinated return of 9 aircraft during severe thunderstorm",
+        impact: "Prevented $60K in diversion costs and ensured safety of 18 pilots"
+      },
+      {
+        title: "Equipment Management Excellence",
+        description: "Managed $17.9M in equipment with 100% operational readiness",
+        impact: "Supporting continuous mission operations without equipment failures"
+      },
+      {
+        title: "Training Innovation",
+        description: "Led radar system training improving safety measures by 85%",
+        impact: "Enhanced operational capabilities and reduced safety risks"
+      },
+      {
+        title: "Crisis Leadership",
+        description: "Led 63-person COVID-19 mitigation team with zero operational disruption",
+        impact: "Maintained flight operations while ensuring health and safety"
+      }
+    ],
+    education: [
+      {
+        degree: "Associate of Arts and Sciences - Air Traffic Control",
+        school: "Community College of the Air Force",
+        period: "December 2019 - April 2020",
+        location: "Texas"
+      },
+      {
+        degree: "Associate of Arts and Sciences - Command & Control Operations",
+        school: "Community College of the Air Force",
+        period: "August 2022 - November 2023",
+        location: "Distinguished Graduate"
+      }
+    ],
+    certifications: [
+      {
+        name: "Air Traffic Control Certification",
+        issuer: "United States Air Force",
+        year: "2020"
+      },
+      {
+        name: "Emergency Management Certification",
+        issuer: "United States Air Force",
+        year: "2021"
       }
     ]
   }

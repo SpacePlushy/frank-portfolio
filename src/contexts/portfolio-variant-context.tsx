@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useMemo } from 'react'
 
-export type PortfolioVariant = 'general' | 'swe' | 'csr'
+export type PortfolioVariant = 'general' | 'military' | 'aviation'
 
 interface PortfolioVariantContextType {
   variant: PortfolioVariant

@@ -86,7 +86,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-sm text-muted-foreground">frank@palmisano.io</p>
+                    <p className="text-sm text-muted-foreground">anthony@palmisano.io</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -115,13 +115,13 @@ export default function ContactSection() {
                 <CardTitle>Professional Links</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                {variant !== 'csr' && (
+                {variant !== 'aviation' && (
                   <Button
                     variant="outline"
                     className="w-full justify-start"
                     asChild
                   >
-                    <a href="https://www.linkedin.com/in/frank-palmisano" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/anthony-palmisano" target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       LinkedIn Profile
                     </a>
@@ -132,7 +132,7 @@ export default function ContactSection() {
                   className="w-full justify-start"
                   asChild
                 >
-                  <a href="https://github.com/SpacePlushy" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/AnthonyPalmisano" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     GitHub Profile
                   </a>
@@ -142,7 +142,7 @@ export default function ContactSection() {
                   className="w-full justify-start"
                   asChild
                 >
-                  <a href="https://palmisano.io" target="_blank" rel="noopener noreferrer">
+                  <a href="https://anthony.palmisano.io" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Portfolio Website
                   </a>

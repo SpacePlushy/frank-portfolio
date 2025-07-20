@@ -55,7 +55,7 @@ export default function HeroSection() {
                     className="group bg-green-600 hover:bg-green-700 h-16"
                     asChild
                   >
-                    <a href="https://csr.palmisano.io">
+                    <a href="https://aviation.palmisano.io">
                       <Users className="mr-3 h-5 w-5" />
                       <div className="text-left">
                         <div className="font-semibold">Customer Service</div>
@@ -69,10 +69,10 @@ export default function HeroSection() {
                     className="group bg-blue-600 hover:bg-blue-700 h-16"
                     asChild
                   >
-                    <a href="https://swe.palmisano.io">
+                    <a href="https://military.palmisano.io">
                       <Code className="mr-3 h-5 w-5" />
                       <div className="text-left">
-                        <div className="font-semibold">Software Engineering</div>
+                        <div className="font-semibold">Military Operations</div>
                         <div className="text-xs opacity-90">NASA • Embedded Systems</div>
                       </div>
                     </a>
@@ -122,7 +122,7 @@ export default function HeroSection() {
                 </div>
               </>
             ) : (
-              /* Original contact buttons for SWE and CSR portfolios */
+              /* Original contact buttons for military and aviation portfolios */
               <>
                 <div className="flex justify-center">
                   <Button
@@ -149,7 +149,7 @@ export default function HeroSection() {
                       Call Me
                     </a>
                   </Button>
-                  {variant !== 'csr' && (
+                  {variant !== 'aviation' && (
                     <Button
                       size="lg"
                       variant="outline"

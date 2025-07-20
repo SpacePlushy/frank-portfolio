@@ -39,14 +39,14 @@ const protectedRoutes = [
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
   const subdomain = headersList.get('x-subdomain') || 'general';
-  const variant = (subdomain === 'general' || subdomain === 'swe' || subdomain === 'csr') ? subdomain : 'general';
+  const variant = (subdomain === 'general' || subdomain === 'military' || subdomain === 'aviation') ? subdomain : 'general';
   const content = portfolioContent[variant];
 
   return {
     title: content.metadata.title,
     description: content.metadata.description,
     keywords: content.metadata.keywords,
-    authors: [{ name: "Frank Palmisano" }],
+    authors: [{ name: "Anthony Palmisano" }],
     openGraph: {
       title: content.metadata.title,
       description: content.metadata.description,
@@ -75,7 +75,7 @@ export default async function RootLayout({
 }>) {
   const headersList = await headers();
   const subdomain = headersList.get('x-subdomain') || 'general';
-  const variant = (subdomain === 'general' || subdomain === 'swe' || subdomain === 'csr') ? subdomain : 'general';
+  const variant = (subdomain === 'general' || subdomain === 'military' || subdomain === 'aviation') ? subdomain : 'general';
 
   return (
     <html lang="en" suppressHydrationWarning>

@@ -9,9 +9,9 @@ import SkillsSection from "@/components/skills-section";
 import EducationSection from "@/components/education-section";
 import ContactSection from "@/components/contact-section";
 import PortfolioSelection from "@/components/portfolio-selection";
-import { usePortfolioVariant } from "@/contexts/portfolio-variant-context";
+import { PortfolioVariantProvider, usePortfolioVariant } from "@/contexts/portfolio-variant-context";
 
-export default function Home() {
+function HomeContent() {
   const variant = usePortfolioVariant();
 
   return (
@@ -26,7 +26,7 @@ export default function Home() {
           <ContactSection />
         </>
       ) : (
-        // Full portfolio layout for SWE and CSR variants
+        // Full portfolio layout for military and aviation variants
         <>
           <AboutSection />
           <ExperienceSection />
@@ -37,5 +37,13 @@ export default function Home() {
         </>
       )}
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <PortfolioVariantProvider variant="general">
+      <HomeContent />
+    </PortfolioVariantProvider>
   );
 }

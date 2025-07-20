@@ -25,9 +25,9 @@ export default function AboutSection() {
             </div>
 
             <div className="space-y-4">
-              <h4 className="text-xl font-semibold">Key {variant === 'csr' ? 'Strengths' : 'Expertise'}</h4>
+              <h4 className="text-xl font-semibold">Key {variant === 'aviation' ? 'Strengths' : 'Expertise'}</h4>
               <div className="flex flex-wrap gap-2">
-                {variant === 'swe' ? (
+                {variant === 'military' ? (
                   <>
                     <Badge variant="secondary">Embedded Programming</Badge>
                     <Badge variant="secondary">Virtualization</Badge>

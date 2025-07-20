@@ -16,7 +16,7 @@
 **Key Features:**
 - **Profile image optimization**: Vercel Blob Storage with automatic optimization via Image component
 - **Contact button hierarchy**: Primary email action with secondary phone/LinkedIn
-- **Variant-specific content**: LinkedIn button hidden for CSR variant
+- **Variant-specific content**: LinkedIn button hidden for aviation variant
 - **Responsive layout**: Optimized for mobile and desktop viewing
 - **Mobile-safe positioning**: "Learn more" button positioned above mobile browser UI
 - **Clean URL scrolling**: Button-based navigation without hash fragments
@@ -26,7 +26,7 @@
 // Mobile-optimized button layout with variant-specific rendering
 <div className="flex gap-3 justify-center">
   <Button className="flex-1 max-w-[140px]">Phone</Button>
-  {variant !== 'csr' && (
+  {variant !== 'aviation' && (
     <Button className="flex-1 max-w-[140px]">LinkedIn</Button>
   )}
 </div>
@@ -127,14 +127,14 @@ useEffect(() => {
 **Interaction Design:**
 - **Contact form**: Real-time validation with error states and loading indicators
 - **Multiple contact methods**: Email, phone, and professional social links
-- **Variant-specific links**: LinkedIn hidden for CSR variant in professional links section
+- **Variant-specific links**: LinkedIn hidden for aviation variant in professional links section
 - **Accessibility**: Proper form labeling, ARIA attributes, and keyboard navigation
 
 #### Portfolio Selection (`portfolio-selection.tsx`)
 **Purpose**: Landing page component for three-way portfolio variant selection
 
 **Key Features:**
-- **Variant cards**: Visual presentation of Software Engineering and Customer Service Representative portfolio options
+- **Variant cards**: Visual presentation of Military Operations and Aviation portfolio options
 - **Keyboard navigation**: Full keyboard support with Enter and Space key handling
 - **Focus management**: Visual focus indicators and proper tab order
 - **Responsive design**: Grid layout optimized for mobile and desktop
@@ -271,7 +271,7 @@ const [isOpen, setIsOpen] = useState(false);
 // Next.js Image component with optimization
 <Image
   src="/headshot.png"
-  alt="Frank Palmisano - Software Engineer"
+  alt="Anthony Palmisano - Military Operations Specialist"
   width={200}
   height={200}
   className="rounded-full border-4 border-primary/20"
@@ -324,7 +324,7 @@ const mailtoLink = createSafeMailtoUrl(validatedData);
 ```typescript
 // Proper semantic markup
 <section id="home" className="..." aria-labelledby="home-heading">
-  <h1 id="home-heading">Frank Palmisano</h1>
+  <h1 id="home-heading">Anthony Palmisano</h1>
   <h2>Software Engineer</h2>
 </section>
 ```

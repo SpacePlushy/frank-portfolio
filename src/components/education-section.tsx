@@ -19,9 +19,9 @@ export default function EducationSection() {
             Education {certifications && certifications.length > 0 && "& Certifications"}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {variant === 'swe'
+            {variant === 'military'
               ? "Academic foundation in computer science and engineering"
-              : variant === 'csr'
+              : variant === 'aviation'
               ? "Educational background and professional certifications"
               : "Academic foundation and continuous learning"
             }
@@ -56,7 +56,7 @@ export default function EducationSection() {
                   </div>
                 </div>
               </CardHeader>
-              {variant === 'swe' && (
+              {variant === 'military' && (
                 <CardContent>
                   <div className="space-y-6">
                     <div>
@@ -69,7 +69,7 @@ export default function EducationSection() {
                           Algorithms
                         </Badge>
                         <Badge variant="outline" className="justify-center">
-                          Software Engineering
+                          Military Science
                         </Badge>
                         <Badge variant="outline" className="justify-center">
                           Computer Systems
@@ -120,7 +120,7 @@ export default function EducationSection() {
                       <h4 className="font-semibold mb-3">Foundation for Career</h4>
                       <p className="text-muted-foreground">
                         My computer science education at ASU provided a strong
-                        foundation in software engineering principles, which has
+                        foundation in military leadership principles, which has
                         been instrumental in my career progression from intern to
                         senior software engineer working on mission-critical
                         aerospace systems.
@@ -132,7 +132,7 @@ export default function EducationSection() {
             </Card>
           ))}
 
-          {/* Certifications for CSR variant */}
+          {/* Certifications for aviation variant */}
           {certifications && certifications.length > 0 && (
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold text-center mb-6">Professional Certifications</h3>

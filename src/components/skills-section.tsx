@@ -43,9 +43,9 @@ export default function SkillsSection() {
             {content.heading}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {variant === 'swe'
+            {variant === 'military'
               ? "Comprehensive technical skills spanning embedded systems, web development, and aerospace technology"
-              : variant === 'csr'
+              : variant === 'aviation'
               ? "Expert-level customer service skills combined with technical proficiency"
               : "Core professional competencies across multiple domains"
             }

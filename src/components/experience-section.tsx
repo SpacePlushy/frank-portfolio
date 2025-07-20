@@ -16,9 +16,9 @@ export default function ExperienceSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {variant === 'swe'
+            {variant === 'military'
               ? "A journey through aerospace and enterprise software development"
-              : variant === 'csr' 
+              : variant === 'aviation' 
               ? "Proven track record in customer satisfaction and service excellence"
               : "Professional experience across diverse domains"
             }

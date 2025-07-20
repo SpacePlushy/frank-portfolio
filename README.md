@@ -1,36 +1,54 @@
-# Frank Palmisano's Portfolio
+# Anthony Palmisano's Portfolio
 
-A modern, responsive portfolio website with dynamic content routing based on subdomains. Built with Next.js, TypeScript, and Tailwind CSS.
+A modern, responsive portfolio website showcasing military leadership and aviation expertise. Built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Features
 
-### Three-Way Portfolio System
+### Professional Portfolio System
 
-This portfolio supports three distinct experiences through subdomain-based routing:
+This portfolio supports three distinct experiences:
 
-1. **General Landing Page** (`palmisano.io`)
+1. **General Landing Page** (`anthonypalmisano.io`)
    - Professional overview with portfolio selection
-   - Interactive cards to choose area of interest
-   - Highlights both technical and service achievements
+   - Interactive cards to choose area of expertise
+   - Highlights both military and aviation achievements
 
-2. **Software Engineering Portfolio** (`swe.palmisano.io`)
-   - Full technical portfolio
-   - NASA Orion spacecraft and embedded systems focus
-   - Comprehensive work history and technical achievements
+2. **Military Leadership Portfolio** (`anthonypalmisano.io/military`)
+   - Complete military career showcase
+   - Crisis management and training expertise
+   - Air Force achievements and leadership roles
 
-3. **Customer Service Representative Portfolio** (`csr.palmisano.io`)
-   - Customer service excellence showcase
-   - 99% customer satisfaction achievements
-   - Apple's top 4% performance metrics
+3. **Aviation & Emergency Management Portfolio** (`anthonypalmisano.io/aviation`)
+   - Air traffic control specialization
+   - Emergency response and flight safety
+   - Aviation operations and equipment management
 
 ### Technical Features
 
 - **Dynamic Content Switching**: Single codebase serves three portfolio variants
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
 - **Dark/Light Theme**: System-aware theme with manual toggle
-- **Performance Optimized**: Next.js 14 with optimized images and fonts
+- **Performance Optimized**: Next.js 15 with optimized images and fonts
 - **Type-Safe**: Full TypeScript implementation
 - **SEO Optimized**: Dynamic metadata for each portfolio variant
+
+## About Anthony Palmisano
+
+Anthony Palmisano is an accomplished United States Air Force Crisis Management Specialist and Training Manager with extensive experience in:
+
+- **Crisis Management & Emergency Response**
+- **Air Traffic Control Operations**
+- **Training Program Development**
+- **Military Leadership & Team Management**
+- **Airfield Operations & Safety**
+
+### Key Achievements
+
+- Training Manager overseeing 20K personnel and $5.4B in assets
+- Distinguished Graduate from Community College of the Air Force
+- 100% compliance rating during critical biannual inspections
+- Led COVID-19 mitigation team of 63 personnel
+- Managed $17.9M in equipment supporting 420K annual operations
 
 ## Getting Started
 
@@ -43,96 +61,78 @@ This portfolio supports three distinct experiences through subdomain-based routi
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/frank-portfolio.git
+git clone https://github.com/SpacePlushy/anthony-palmisano-portfolio.git
 
 # Navigate to project directory
-cd frank-portfolio
+cd anthony-palmisano-portfolio
 
 # Install dependencies
 npm install
-```
 
-### Local Development
-
-For testing the subdomain routing locally:
-
-```bash
-# Run the setup script to configure local hosts
-./scripts/setup-local-testing.sh
-
-# Start the development server
+# Start development server
 npm run dev
 ```
 
-Then visit:
-- General Landing: http://palmisano.local:3000
-- Software Engineering: http://swe.palmisano.local:3000
-- Customer Service Representative: http://csr.palmisano.local:3000
+Open [http://localhost:3000](http://localhost:3000) to see the portfolio.
 
-### Project Structure
+### Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+## Portfolio Structure
 
 ```
 src/
-├── app/                    # Next.js app directory
-├── components/             # React components
-│   ├── sections/          # Portfolio section components
-│   └── ui/                # Reusable UI components
-├── config/                # Configuration files
-│   └── portfolio-content.ts # All portfolio content
-├── contexts/              # React contexts
-├── lib/                   # Utility functions
-└── middleware.ts          # Subdomain routing logic
+├── app/                    # Next.js app router
+│   ├── military/          # Military leadership portfolio
+│   ├── aviation/          # Aviation & emergency management portfolio
+│   └── page.tsx           # General landing page
+├── components/            # React components
+├── config/               # Portfolio content configuration
+├── contexts/             # React contexts
+└── lib/                  # Utility functions
 ```
+
+## Content Management
+
+Portfolio content is managed through TypeScript configuration files:
+
+- `src/config/portfolio-content.ts` - Main content configuration
+- `src/contexts/portfolio-variant-context.tsx` - Variant management
+
+To update content, modify the appropriate configuration files and the changes will be reflected across all portfolio variants.
 
 ## Deployment
 
-### Vercel Deployment
+This portfolio is optimized for deployment on Vercel:
 
-1. Push to GitHub (automatic deployment via Vercel)
-2. Configure domains in Vercel Dashboard:
-   - `palmisano.io`
-   - `swe.palmisano.io`
-   - `csr.palmisano.io`
+1. Connect your GitHub repository to Vercel
+2. Deploy automatically with each push to main branch
+3. Configure environment variables if needed
 
-### DNS Configuration
+The portfolio supports:
+- Automatic builds and deployments
+- Preview deployments for pull requests
+- Analytics and performance monitoring
 
-Configure your DNS provider:
+## Technologies Used
 
-```
-A record: @ → 76.76.21.21
-CNAME: swe → cname.vercel-dns.com
-CNAME: csr → cname.vercel-dns.com
-```
+- **Next.js 15** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Radix UI** - Accessible components
+- **Framer Motion** - Animations
+- **Vercel Analytics** - Performance monitoring
 
-## Documentation
+## Contact
 
-- [Three-Way Portfolio Setup](./docs/THREE_WAY_PORTFOLIO_SETUP.md) - Detailed setup guide
-- [Customer Service Representative Portfolio Setup](./docs/CSR_PORTFOLIO_SETUP.md) - CSR-specific documentation
-- [Troubleshooting CSR Subdomain](./TROUBLESHOOT_CSR.md) - Common issues and solutions
-
-## Technology Stack
-
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **UI Components**: Radix UI
-- **Icons**: Lucide React
-- **Deployment**: Vercel
-
-## Scripts
-
-```bash
-npm run dev        # Start development server
-npm run build      # Build for production
-npm run start      # Start production server
-npm run lint       # Run ESLint
-npm run type-check # Run TypeScript compiler
-```
-
-## Contributing
-
-This is a personal portfolio project, but suggestions and feedback are welcome!
+Anthony Palmisano
+- **LinkedIn**: [https://linkedin.com/in/anthonypalmisano](https://linkedin.com/in/anthonypalmisano)
+- **Location**: Greater Phoenix Area
 
 ## License
 
-This project is private and proprietary. All rights reserved.
+This project is private and proprietary.
